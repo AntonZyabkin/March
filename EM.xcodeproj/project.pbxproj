@@ -12,6 +12,14 @@
 		E8B6F27229BEF8F5007DF468 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F27129BEF8F5007DF468 /* ContentView.swift */; };
 		E8B6F27429BEF8F8007DF468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F27329BEF8F8007DF468 /* Assets.xcassets */; };
 		E8B6F27729BEF8F8007DF468 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F27629BEF8F8007DF468 /* Preview Assets.xcassets */; };
+		E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F28529BEFD91007DF468 /* NetworkService.swift */; };
+		E8B6F28829BEFD9F007DF468 /* DecoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F28729BEFD9F007DF468 /* DecoderService.swift */; };
+		E8B6F28A29BEFDA8007DF468 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F28929BEFDA8007DF468 /* KeychainService.swift */; };
+		E8B6F28D29BEFF5D007DF468 /* LatestViewedResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F28C29BEFF5D007DF468 /* LatestViewedResponce.swift */; };
+		E8B6F28F29BEFF90007DF468 /* FlashSaleResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F28E29BEFF90007DF468 /* FlashSaleResponce.swift */; };
+		E8B6F29129BF09D7007DF468 /* ShowAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F29029BF09D7007DF468 /* ShowAPIService.swift */; };
+		E8B6F29329BF0A73007DF468 /* ShowEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F29229BF0A73007DF468 /* ShowEndpoints.swift */; };
+		E8B6F29629BF1217007DF468 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F29529BF1217007DF468 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		E8B6F27129BEF8F5007DF468 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E8B6F27329BEF8F8007DF468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8B6F27629BEF8F8007DF468 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E8B6F28529BEFD91007DF468 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E8B6F28729BEFD9F007DF468 /* DecoderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderService.swift; sourceTree = "<group>"; };
+		E8B6F28929BEFDA8007DF468 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		E8B6F28C29BEFF5D007DF468 /* LatestViewedResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestViewedResponce.swift; sourceTree = "<group>"; };
+		E8B6F28E29BEFF90007DF468 /* FlashSaleResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleResponce.swift; sourceTree = "<group>"; };
+		E8B6F29029BF09D7007DF468 /* ShowAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAPIService.swift; sourceTree = "<group>"; };
+		E8B6F29229BF0A73007DF468 /* ShowEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEndpoints.swift; sourceTree = "<group>"; };
+		E8B6F29529BF1217007DF468 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,7 +59,6 @@
 				393F86B5EC6EF010817C3226 /* Pods-EM.debug.xcconfig */,
 				F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -76,6 +91,9 @@
 		E8B6F26E29BEF8F5007DF468 /* EM */ = {
 			isa = PBXGroup;
 			children = (
+				E8B6F27F29BEFCEB007DF468 /* Coordinators */,
+				E8B6F27E29BEFCC7007DF468 /* Flows */,
+				E8B6F27D29BEFCA0007DF468 /* Core */,
 				E8B6F26F29BEF8F5007DF468 /* EMApp.swift */,
 				E8B6F27129BEF8F5007DF468 /* ContentView.swift */,
 				E8B6F27329BEF8F8007DF468 /* Assets.xcassets */,
@@ -90,6 +108,83 @@
 				E8B6F27629BEF8F8007DF468 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E8B6F27D29BEFCA0007DF468 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F28129BEFD11007DF468 /* Extensions */,
+				E8B6F28029BEFD07007DF468 /* ServiceLayer */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E8B6F27E29BEFCC7007DF468 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F29429BF11BD007DF468 /* Home */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		E8B6F27F29BEFCEB007DF468 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		E8B6F28029BEFD07007DF468 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F28B29BEFF48007DF468 /* Responses */,
+				E8B6F28329BEFD48007DF468 /* MoyaServices */,
+				E8B6F28229BEFD3A007DF468 /* APIServices */,
+				E8B6F28529BEFD91007DF468 /* NetworkService.swift */,
+				E8B6F28729BEFD9F007DF468 /* DecoderService.swift */,
+				E8B6F28929BEFDA8007DF468 /* KeychainService.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		E8B6F28129BEFD11007DF468 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E8B6F28229BEFD3A007DF468 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F29029BF09D7007DF468 /* ShowAPIService.swift */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		E8B6F28329BEFD48007DF468 /* MoyaServices */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F29229BF0A73007DF468 /* ShowEndpoints.swift */,
+			);
+			path = MoyaServices;
+			sourceTree = "<group>";
+		};
+		E8B6F28B29BEFF48007DF468 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F28C29BEFF5D007DF468 /* LatestViewedResponce.swift */,
+				E8B6F28E29BEFF90007DF468 /* FlashSaleResponce.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		E8B6F29429BF11BD007DF468 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F29529BF1217007DF468 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +302,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8B6F27229BEF8F5007DF468 /* ContentView.swift in Sources */,
+				E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */,
+				E8B6F28D29BEFF5D007DF468 /* LatestViewedResponce.swift in Sources */,
+				E8B6F29629BF1217007DF468 /* HomeViewModel.swift in Sources */,
+				E8B6F29129BF09D7007DF468 /* ShowAPIService.swift in Sources */,
+				E8B6F28829BEFD9F007DF468 /* DecoderService.swift in Sources */,
+				E8B6F28A29BEFDA8007DF468 /* KeychainService.swift in Sources */,
+				E8B6F29329BF0A73007DF468 /* ShowEndpoints.swift in Sources */,
 				E8B6F27029BEF8F5007DF468 /* EMApp.swift in Sources */,
+				E8B6F28F29BEFF90007DF468 /* FlashSaleResponce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +447,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,6 +477,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
