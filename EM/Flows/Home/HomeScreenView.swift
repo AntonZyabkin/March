@@ -10,8 +10,21 @@ import SwiftUI
 struct HomeScreenView: View {
     var viewModel: HomeViewModelProtocol?
     var body: some View {
-        Color(UIColor.red)
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Color(asset: Asset.accentColor)
+            Text(L10n.test)
+                .font(.montserrat(.bold, size: 50))
+            Text(L10n.test)
+                .font(.montserrat(.medium, size: 30))
+            Text(L10n.test)
+                .font(.montserrat(.regular, size: 30))
+            Text(L10n.test)
+                .font(.montserrat(.light, size: 30))
+            Button("привет", action: {
+                print("test")
+            })
+            .font(.montserrat(.bold, size: 30))
+        }
     }
 }
 

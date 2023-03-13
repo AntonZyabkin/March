@@ -8,5 +8,6 @@ target 'EM' do
   # Pods for EM
   pod 'Moya'
   pod 'SwiftKeychainWrapper'
+  pod 'SwiftGen'
 
 end

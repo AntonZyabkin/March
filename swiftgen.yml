@@ -1,0 +1,18 @@
+strings:
+  inputs: EM/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: EM/Resources/Generated/Localizable+Generated.swift
+
+fonts:
+  inputs: EM/Resources/Fonts
+  outputs:
+    - templateName: swift5
+      output: EM/Resources/Generated/Fonts+Generated.swift
+      
+xcassets:
+  inputs:
+    - EM/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: EM/Resources/Generated/Assets+Generated.swift
