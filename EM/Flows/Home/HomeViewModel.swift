@@ -13,10 +13,13 @@ protocol HomeViewModelProtocol {
 
 final class HomeViewModel: ObservableObject {
     private let shopApiService: ShopAPIServicable
+    private let coordinator: AppCoordinator
     
     
-    init(shopApiService: ShopAPIServicable) {
+    init(shopApiService: ShopAPIServicable, coordinator: AppCoordinator) {
         self.shopApiService = shopApiService
+        self.coordinator = coordinator
+        getlatest()
     }
     
     
@@ -33,11 +36,11 @@ extension HomeViewModel: HomeViewModelProtocol {
         Task(priority: .utility) {
             do {
                 let flashSale = try await shopApiService.getFlashSale()
-                let latestViewed = try await shopApiService.getLatestViewed()
+//                let latestViewed = try await shopApiService.getLatestViewed()
                 
                 await MainActor.run {
                     print(flashSale)
-                    print(latestViewed)
+//                    print(latestViewed)
                 }
             } catch let error as NetworkError {
                 switch error {

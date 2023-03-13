@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BE9D161E19FBA987F6234F9A /* Pods_EM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C998FB1C6B07B9BB809C59FF /* Pods_EM.framework */; };
 		E8B6F27029BEF8F5007DF468 /* EMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F26F29BEF8F5007DF468 /* EMApp.swift */; };
-		E8B6F27229BEF8F5007DF468 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F27129BEF8F5007DF468 /* ContentView.swift */; };
 		E8B6F27429BEF8F8007DF468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F27329BEF8F8007DF468 /* Assets.xcassets */; };
 		E8B6F27729BEF8F8007DF468 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F27629BEF8F8007DF468 /* Preview Assets.xcassets */; };
 		E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F28529BEFD91007DF468 /* NetworkService.swift */; };
@@ -20,6 +19,8 @@
 		E8B6F29129BF09D7007DF468 /* ShowAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F29029BF09D7007DF468 /* ShowAPIService.swift */; };
 		E8B6F29329BF0A73007DF468 /* ShowEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F29229BF0A73007DF468 /* ShowEndpoints.swift */; };
 		E8B6F29629BF1217007DF468 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F29529BF1217007DF468 /* HomeViewModel.swift */; };
+		E8B6F29829BF18AF007DF468 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F29729BF18AF007DF468 /* HomeScreenView.swift */; };
+		E8B6F29A29BF1AFC007DF468 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F29929BF1AFC007DF468 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,6 @@
 		C998FB1C6B07B9BB809C59FF /* Pods_EM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B6F26C29BEF8F5007DF468 /* EM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B6F26F29BEF8F5007DF468 /* EMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMApp.swift; sourceTree = "<group>"; };
-		E8B6F27129BEF8F5007DF468 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E8B6F27329BEF8F8007DF468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8B6F27629BEF8F8007DF468 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8B6F28529BEFD91007DF468 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		E8B6F29029BF09D7007DF468 /* ShowAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAPIService.swift; sourceTree = "<group>"; };
 		E8B6F29229BF0A73007DF468 /* ShowEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEndpoints.swift; sourceTree = "<group>"; };
 		E8B6F29529BF1217007DF468 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E8B6F29729BF18AF007DF468 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		E8B6F29929BF1AFC007DF468 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +97,6 @@
 				E8B6F27E29BEFCC7007DF468 /* Flows */,
 				E8B6F27D29BEFCA0007DF468 /* Core */,
 				E8B6F26F29BEF8F5007DF468 /* EMApp.swift */,
-				E8B6F27129BEF8F5007DF468 /* ContentView.swift */,
 				E8B6F27329BEF8F8007DF468 /* Assets.xcassets */,
 				E8B6F27529BEF8F8007DF468 /* Preview Content */,
 			);
@@ -130,6 +131,7 @@
 		E8B6F27F29BEFCEB007DF468 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				E8B6F29929BF1AFC007DF468 /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				E8B6F29529BF1217007DF468 /* HomeViewModel.swift */,
+				E8B6F29729BF18AF007DF468 /* HomeScreenView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -301,13 +304,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8B6F27229BEF8F5007DF468 /* ContentView.swift in Sources */,
+				E8B6F29A29BF1AFC007DF468 /* AppCoordinator.swift in Sources */,
 				E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */,
 				E8B6F28D29BEFF5D007DF468 /* LatestViewedResponce.swift in Sources */,
 				E8B6F29629BF1217007DF468 /* HomeViewModel.swift in Sources */,
 				E8B6F29129BF09D7007DF468 /* ShowAPIService.swift in Sources */,
 				E8B6F28829BEFD9F007DF468 /* DecoderService.swift in Sources */,
 				E8B6F28A29BEFDA8007DF468 /* KeychainService.swift in Sources */,
+				E8B6F29829BF18AF007DF468 /* HomeScreenView.swift in Sources */,
 				E8B6F29329BF0A73007DF468 /* ShowEndpoints.swift in Sources */,
 				E8B6F27029BEF8F5007DF468 /* EMApp.swift in Sources */,
 				E8B6F28F29BEFF90007DF468 /* FlashSaleResponce.swift in Sources */,
