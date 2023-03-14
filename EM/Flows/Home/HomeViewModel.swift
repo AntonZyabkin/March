@@ -19,7 +19,6 @@ final class HomeViewModel: ObservableObject {
     init(shopApiService: ShopAPIServicable, coordinator: AppCoordinator) {
         self.shopApiService = shopApiService
         self.coordinator = coordinator
-        getlatest()
     }
     
     

@@ -12,7 +12,7 @@ fonts:
       
 xcassets:
   inputs:
-    - EM/Assets.xcassets
+    - EM/Resources/Assets.xcassets
   outputs:
     - templateName: swift5
       output: EM/Resources/Generated/Assets+Generated.swift

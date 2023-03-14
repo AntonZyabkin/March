@@ -6,5 +6,31 @@
   
 */
 
-"test" = "some tests";
+// MARK: Buttons
+"button.signIn" = "Sing in";
+"button.signInGoogle" = "Sing in with Google";
+"button.signInApple" = "Sing in with Apple";
+"button.logIn" = "Log in";
+
+// MARK: Registration
+"reg.title" = "Sign in";
+"reg.first" = "First name";
+"reg.last" = "Last name";
+"reg.email" = "Email";
+"reg.haveAccount" = "Already have an account";
+
+// MARK: Login
+"login.title" = "Welcome back";
+"login.first" = "First name";
+"login.password" = "Password";
+
+
+// MARK: Home
+"home.title" = "Вход";
+
+// MARK: Profile
+"profile.title" = "Вход";
+
+// MARK: Item
+
 

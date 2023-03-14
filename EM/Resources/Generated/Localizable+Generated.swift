@@ -10,11 +10,47 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  /// Localizable.strings
-  ///   EM
-  /// 
-  ///   Created by Anton Zyabkin on 13.03.2023.
-  internal static let test = L10n.tr("Localizable", "test", fallback: "some tests")
+  internal enum Button {
+    /// Log in
+    internal static let logIn = L10n.tr("Localizable", "button.logIn", fallback: "Log in")
+    /// Localizable.strings
+    ///   EM
+    /// 
+    ///   Created by Anton Zyabkin on 13.03.2023.
+    internal static let signIn = L10n.tr("Localizable", "button.signIn", fallback: "Sing in")
+    /// Sing in with Apple
+    internal static let signInApple = L10n.tr("Localizable", "button.signInApple", fallback: "Sing in with Apple")
+    /// Sing in with Google
+    internal static let signInGoogle = L10n.tr("Localizable", "button.signInGoogle", fallback: "Sing in with Google")
+  }
+  internal enum Home {
+    /// Вход
+    internal static let title = L10n.tr("Localizable", "home.title", fallback: "Вход")
+  }
+  internal enum Login {
+    /// First name
+    internal static let first = L10n.tr("Localizable", "login.first", fallback: "First name")
+    /// Password
+    internal static let password = L10n.tr("Localizable", "login.password", fallback: "Password")
+    /// Welcome back
+    internal static let title = L10n.tr("Localizable", "login.title", fallback: "Welcome back")
+  }
+  internal enum Profile {
+    /// Вход
+    internal static let title = L10n.tr("Localizable", "profile.title", fallback: "Вход")
+  }
+  internal enum Reg {
+    /// Email
+    internal static let email = L10n.tr("Localizable", "reg.email", fallback: "Email")
+    /// First name
+    internal static let first = L10n.tr("Localizable", "reg.first", fallback: "First name")
+    /// Already have an account
+    internal static let haveAccount = L10n.tr("Localizable", "reg.haveAccount", fallback: "Already have an account")
+    /// Last name
+    internal static let last = L10n.tr("Localizable", "reg.last", fallback: "Last name")
+    /// Sign in
+    internal static let title = L10n.tr("Localizable", "reg.title", fallback: "Sign in")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

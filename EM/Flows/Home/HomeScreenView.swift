@@ -8,19 +8,39 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    @State private var toggle = false
     var viewModel: HomeViewModelProtocol?
     var body: some View {
         VStack {
+            Button {
+                toggle.toggle()
+            } label: {
+                if toggle {
+                    Image("eye")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .aspectRatio(contentMode: .fit)
+                        .background(Color.ikonActiveForeground)
+                        .foregroundColor(.red)
+
+                } else {
+                    Image("eye 1")
+                        .resizable()
+                        .frame(width: 100, height: 70)
+                        .aspectRatio(contentMode: .fit)
+                        .background(Color.ikonActiveForeground)
+                        .foregroundColor(.red)
+
+                }
+            }
+            
+            RoundedRectangle(cornerRadius: 40, style: .continuous)
+                .foregroundColor(Color.pink)
+                .padding(.horizontal, 10)
+            
+            
             Color(asset: Asset.accentColor)
-            Text(L10n.test)
-                .font(.montserrat(.bold, size: 50))
-            Text(L10n.test)
-                .font(.montserrat(.medium, size: 30))
-            Text(L10n.test)
-                .font(.montserrat(.regular, size: 30))
-            Text(L10n.test)
-                .font(.montserrat(.light, size: 30))
-            Button("привет", action: {
+            Button("ловмлывм", action: {
                 print("test")
             })
             .font(.montserrat(.bold, size: 30))

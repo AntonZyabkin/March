@@ -27,9 +27,12 @@
 		E8B6F2C229BF669A007DF468 /* Fonts+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2C129BF669A007DF468 /* Fonts+Generated.swift */; };
 		E8B6F2C429BF6EAB007DF468 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2C329BF6EAB007DF468 /* Extensions.swift */; };
 		E8B6F2CD29BF7E3F007DF468 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F2C929BF7E3F007DF468 /* Montserrat-Light.ttf */; };
-		E8B6F2CE29BF7E3F007DF468 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F2CA29BF7E3F007DF468 /* Montserrat-Bold.ttf */; };
 		E8B6F2CF29BF7E3F007DF468 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F2CB29BF7E3F007DF468 /* Montserrat-Medium.ttf */; };
 		E8B6F2D029BF7E3F007DF468 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F2CC29BF7E3F007DF468 /* Montserrat-Regular.ttf */; };
+		E8B6F2D329C06581007DF468 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2D229C06580007DF468 /* LoginViewModel.swift */; };
+		E8B6F2D629C065C9007DF468 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2D529C065C9007DF468 /* LoginView.swift */; };
+		E8B6F2D829C06FB7007DF468 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2D729C06FB7007DF468 /* ViewExtensions.swift */; };
+		E8B6F2DA29C075F0007DF468 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F2D929C075F0007DF468 /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,9 +60,12 @@
 		E8B6F2C329BF6EAB007DF468 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E8B6F2C829BF7D06007DF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E8B6F2C929BF7E3F007DF468 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
-		E8B6F2CA29BF7E3F007DF468 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		E8B6F2CB29BF7E3F007DF468 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		E8B6F2CC29BF7E3F007DF468 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		E8B6F2D229C06580007DF468 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E8B6F2D529C065C9007DF468 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E8B6F2D729C06FB7007DF468 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		E8B6F2D929C075F0007DF468 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +127,6 @@
 				E8B6F27D29BEFCA0007DF468 /* Core */,
 				E8B6F27529BEF8F8007DF468 /* Preview Content */,
 				E8B6F2BB29BF5629007DF468 /* Resources */,
-				E8B6F27329BEF8F8007DF468 /* Assets.xcassets */,
 			);
 			path = EM;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 		E8B6F27E29BEFCC7007DF468 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				E8B6F2D129C0656B007DF468 /* Login */,
 				E8B6F29429BF11BD007DF468 /* Home */,
 			);
 			path = Flows;
@@ -176,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				E8B6F2C329BF6EAB007DF468 /* Extensions.swift */,
+				E8B6F2D729C06FB7007DF468 /* ViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +237,7 @@
 				E8B6F2BD29BF56CB007DF468 /* Localizable.strings */,
 				E8B6F2BF29BF6554007DF468 /* Fonts */,
 				E8B6F2B629BF5337007DF468 /* Generated */,
+				E8B6F27329BEF8F8007DF468 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -237,12 +245,21 @@
 		E8B6F2BF29BF6554007DF468 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E8B6F2CA29BF7E3F007DF468 /* Montserrat-Bold.ttf */,
+				E8B6F2D929C075F0007DF468 /* Montserrat-Bold.ttf */,
 				E8B6F2C929BF7E3F007DF468 /* Montserrat-Light.ttf */,
 				E8B6F2CB29BF7E3F007DF468 /* Montserrat-Medium.ttf */,
 				E8B6F2CC29BF7E3F007DF468 /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E8B6F2D129C0656B007DF468 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F2D229C06580007DF468 /* LoginViewModel.swift */,
+				E8B6F2D529C065C9007DF468 /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,12 +323,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8B6F2CE29BF7E3F007DF468 /* Montserrat-Bold.ttf in Resources */,
 				E8B6F2CD29BF7E3F007DF468 /* Montserrat-Light.ttf in Resources */,
 				E8B6F2D029BF7E3F007DF468 /* Montserrat-Regular.ttf in Resources */,
 				E8B6F27729BEF8F8007DF468 /* Preview Assets.xcassets in Resources */,
 				E8B6F2BE29BF56CB007DF468 /* Localizable.strings in Resources */,
 				E8B6F2CF29BF7E3F007DF468 /* Montserrat-Medium.ttf in Resources */,
+				E8B6F2DA29C075F0007DF468 /* Montserrat-Bold.ttf in Resources */,
 				E8B6F27429BEF8F8007DF468 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,11 +386,14 @@
 				E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */,
 				E8B6F28D29BEFF5D007DF468 /* LatestViewedResponce.swift in Sources */,
 				E8B6F29629BF1217007DF468 /* HomeViewModel.swift in Sources */,
+				E8B6F2D829C06FB7007DF468 /* ViewExtensions.swift in Sources */,
+				E8B6F2D329C06581007DF468 /* LoginViewModel.swift in Sources */,
 				E8B6F29129BF09D7007DF468 /* ShowAPIService.swift in Sources */,
 				E8B6F28829BEFD9F007DF468 /* DecoderService.swift in Sources */,
 				E8B6F2B929BF54E8007DF468 /* Assets+Generated.swift in Sources */,
 				E8B6F2BA29BF54E8007DF468 /* Localizable+Generated.swift in Sources */,
 				E8B6F28A29BEFDA8007DF468 /* KeychainService.swift in Sources */,
+				E8B6F2D629C065C9007DF468 /* LoginView.swift in Sources */,
 				E8B6F29829BF18AF007DF468 /* HomeScreenView.swift in Sources */,
 				E8B6F2C429BF6EAB007DF468 /* Extensions.swift in Sources */,
 				E8B6F2C229BF669A007DF468 /* Fonts+Generated.swift in Sources */,
