@@ -17,7 +17,7 @@
 "reg.first" = "First name";
 "reg.last" = "Last name";
 "reg.email" = "Email";
-"reg.haveAccount" = "Already have an account";
+"reg.haveAccount" = "Already have an account?";
 
 // MARK: Login
 "login.title" = "Welcome back";
@@ -29,7 +29,16 @@
 "home.title" = "Вход";
 
 // MARK: Profile
-"profile.title" = "Вход";
+"profile.title" = "Profile";
+"profile.changePhoto" = "Change photo";
+"profile.uploadItemButton" = "Upload item";
+"profile.tradeStore" = "Trade store";
+"profile.paymentMethod" = "Payment method";
+"profile.balance" = "Balance";
+"profile.tradeHistory" = "Trade history";
+"profile.restorePurchase" = "Restore purchase";
+"profile.help" = "Help";
+"profile.logOut" = "Log out";
 
 // MARK: Item
 

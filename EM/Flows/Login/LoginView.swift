@@ -10,105 +10,75 @@ import SwiftUI
 struct LoginView: View {
     
     @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
+    @State private var password = ""
+    @State private var isHidden = true
+
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Color.pageBackground
                 .ignoresSafeArea()
-//            GeometryReader { Geometry in
-//                ZStack  {
-//                    Image("1")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .edgesIgnoringSafeArea(.all)
-//                        .opacity(0.3)
-//                }
-//            }
-            VStack {
-                VStack(alignment: .center) {
-                    Text(L10n.Reg.title)
-                        .font(.montserrat(.bold, size: 30))
-                        .padding(.bottom, 75)
-                    VStack(alignment: .center, spacing: 35) {
-                        Group {
-                            TextField(L10n.Reg.first, text: $firstName)
-                            TextField(L10n.Reg.last, text: $lastName)
-                            TextField(L10n.Reg.email, text: $email)
-                        }
-                        .textFieldStyle()
-                    }
-                    Button {
-                        //
-                    } label: {
-                        Text(L10n.Button.signIn)
-                            .font(.montserrat(.bold, size: 15))
-                            .clipShape(RoundedRectangle(cornerRadius: 14))
-                    }
-                    .frame(width: .infinity, height: 52)
-                    .foregroundColor(.white)
-                    .background(Color.buttonBackground)
-                    .cornerRadius(15)
-                    .padding(.top, 35)
-                    .padding(.bottom, 8)
-                    .frame(
-                        minWidth: 0,
-                        maxWidth: .infinity,
-                        alignment: .topLeading
-                    )
-                    
-                    HStack() {
-                        Text(L10n.Reg.haveAccount)
-                            .font(.montserrat(.light, size: 12))
-                            .foregroundColor(.mainGray)
-                        Button {
-                            //
-                        } label: {
-                            Text(L10n.Button.logIn)
-                                .font(.montserrat(.light, size: 12))
-                                .foregroundColor(.buttonForegrounds)
-                        }
-                    }
-                    .padding(.bottom, 74)
-                    .frame(
-                        maxWidth: .infinity,
-                        alignment: .topLeading
-                    )
-                }
-                .padding(.horizontal, 43)
-                
-                VStack(alignment: .leading) {
-                    Button {
-                        //
-                    } label: {
-                        HStack {
-                            Image(asset: Asset.google)
-                                .resizable()
-                                .frame(width: 25, height: 25, alignment: .center)
-                                .aspectRatio(contentMode: .fit)
-                            Text(L10n.Button.signInGoogle)
-                                .font(.montserrat(.regular, size: 15))
-                        }
-                        .foregroundColor(.black)
-                    }
-                    .padding(.bottom, 35)
-                    Button {
-                        //
-                    } label: {
-                        HStack {
-                            Image(asset: Asset.apple)
-                                .resizable()
-                                .frame(width: 25, height: 30, alignment: .center)
-                                .aspectRatio(contentMode: .fit)
-                            Text(L10n.Button.signInApple)
-                                .font(.montserrat(.regular, size: 15))
-                        }
-                        .foregroundColor(.black)
-                    }
-                    
+            GeometryReader { Geometry in
+                ZStack  {
+                    Image("2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                        .opacity(0.5)
                 }
             }
+            VStack(alignment: .center) {
+                Text(L10n.Login.title)
+                    .font(.montserrat(.bold, size: 28))
+                    .padding(.bottom, 75)
+                    .padding(.top, 120)
+                VStack(alignment: .center, spacing: 35) {
+                    Group {
+                        TextField(L10n.Login.first, text: $password)
+                        ZStack(alignment: .trailing) {
+                            if isHidden {
+                                TextField(L10n.Login.password, text: $password)
+                            } else {
+                                SecureField(L10n.Login.password, text: $password)
+                            }
+                            Button {
+                                isHidden.toggle()
+                            } label: {
+                                if isHidden {
+                                    Image(asset: Asset.eye1)
+                                } else {
+                                    Image(asset: Asset.eye)
+                                }
+                            }
+                            .aspectRatio(contentMode: .fill)
+                            .foregroundColor(.mainGray)
+                            .padding(.trailing, 10)
+                        }
+                    }
+                    .textFieldModifier()
+                }
+                .padding(.bottom, 100)
+                Button {
+                    //
+                } label: {
+                    Text(L10n.Button.logIn)
+                        .blueButtonModifier()
+                }
+                .opacity(0.3)
+            }
+            .padding(.horizontal, 48)
+            
         }
+    }
+    
+    func singInButtons(_ image: ImageAsset, title: String) -> some View {
+        HStack {
+            Image(asset: image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Text(title)
+                .font(.montserrat(.regular, size: 15))
+        }
+        .foregroundColor(.black)
     }
 }
 

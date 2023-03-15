@@ -8,20 +8,35 @@
 import SwiftUI
 
 extension View {
-    func textFieldStyle ()  -> some View {
+    func textFieldModifier ()  -> some View {
         self.modifier(TextFieldModifier())
     }
+    func blueButtonModifier ()  -> some View {
+        self.modifier(BlueButtonModifier())
+    }
+
 }
 
-struct TextFieldModifier : ViewModifier {
+struct TextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(width: .infinity, height: 35)
             .background(Color.textFieldBackground)
-            .font(.montserrat(.regular, size: 15))
+            .font(.montserrat(.bold, size: 12))
             .cornerRadius(.infinity)
             .multilineTextAlignment(.center)
     }
 }
 
 
+struct BlueButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.montserrat(.bold, size: 15))
+            .frame(maxWidth: .infinity)
+            .frame(height: 52)
+            .foregroundColor(.white)
+            .background(Color.buttonBackground)
+            .cornerRadius(15)
+    }
+}

@@ -20,7 +20,7 @@ struct HomeScreenView: View {
                         .resizable()
                         .frame(width: 100, height: 100)
                         .aspectRatio(contentMode: .fit)
-                        .background(Color.ikonActiveForeground)
+                        .background(Color.iconActiveForeground)
                         .foregroundColor(.red)
 
                 } else {
@@ -28,7 +28,7 @@ struct HomeScreenView: View {
                         .resizable()
                         .frame(width: 100, height: 70)
                         .aspectRatio(contentMode: .fit)
-                        .background(Color.ikonActiveForeground)
+                        .background(Color.iconActiveForeground)
                         .foregroundColor(.red)
 
                 }
