@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ProfileView: View {
     
+    @State private var image: Image = Image(asset: Asset.eye)
+    @State private var shouldPresentImagePicker = false
+    @State private var shouldPresentActionScheet = false
+    @State private var shouldPresentCamera = false
     
     private let profileElements = [
         ProfileElement(icon: Asset.folder, title: L10n.Profile.tradeStore, isEditable: true),
@@ -19,20 +24,21 @@ struct ProfileView: View {
         ProfileElement(icon: Asset.help, title: L10n.Profile.help, isEditable: false),
         ProfileElement(icon: Asset.logOut, title: L10n.Profile.logOut, isEditable: false)
     ]
+    
     var body: some View {
         ZStack(alignment: .top) {
             Color.pageBackground
                 .ignoresSafeArea()
             
-//            GeometryReader { Geometry in
-//                ZStack  {
-//                    Image("3")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .edgesIgnoringSafeArea(.all)
-////                        .opacity(0.8)
-//                }
-//            }
+            //            GeometryReader { Geometry in
+            //                ZStack  {
+            //                    Image("3")
+            //                        .resizable()
+            //                        .aspectRatio(contentMode: .fill)
+            //                        .edgesIgnoringSafeArea(.all)
+            ////                        .opacity(0.8)
+            //                }
+            //            }
             VStack {
                 //MARK: - main views
                 VStack(alignment: .center) {
@@ -43,7 +49,7 @@ struct ProfileView: View {
                     ZStack {
                         Circle()
                             .stroke(Color.iconInactiveForeground, lineWidth: 4)
-                        Image("testProfileImage")
+                        image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .cornerRadius(.infinity)
@@ -53,11 +59,15 @@ struct ProfileView: View {
                     .padding(.top, 5)
                     
                     Button {
-                        //
+                        self.shouldPresentImagePicker = true
+                        self.shouldPresentCamera = false
                     } label: {
                         Text(L10n.Profile.changePhoto)
                             .font(.montserrat(.medium, size: 9))
                             .foregroundColor(.mainBlack)
+                            .sheet(isPresented: $shouldPresentImagePicker) {
+                                SUImagePickerView(sourceType: .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+                            }
                     }
                     
                     Text("MyName is Emenem")
@@ -82,6 +92,7 @@ struct ProfileView: View {
                 .padding(.horizontal, 48)
                 
                 //MARK: - List of options
+                //TODO: как лучше реализовать данный список опций?
                 VStack(alignment: .leading, spacing: 25) {
                     ForEach(profileElements) { element in
                         Button {
@@ -96,7 +107,7 @@ struct ProfileView: View {
                 .padding(.top, 5)
                 .padding(.leading, 36)
                 .padding(.trailing, 50)
-            
+                
                 
             }
         }

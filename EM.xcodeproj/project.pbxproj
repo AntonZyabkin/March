@@ -37,6 +37,7 @@
 		E8B6F2DF29C09BFA007DF468 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2DE29C09BFA007DF468 /* RegistrationViewModel.swift */; };
 		E8B6F2FC29C1BBAC007DF468 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2FB29C1BBAC007DF468 /* ProfileViewModel.swift */; };
 		E8B6F2FE29C1BBC6007DF468 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2FD29C1BBC6007DF468 /* ProfileView.swift */; };
+		E8B6F30029C1ED8B007DF468 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2FF29C1ED8B007DF468 /* PhotoPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		E8B6F2DE29C09BFA007DF468 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E8B6F2FB29C1BBAC007DF468 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E8B6F2FD29C1BBC6007DF468 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E8B6F2FF29C1ED8B007DF468 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +288,7 @@
 			children = (
 				E8B6F2FB29C1BBAC007DF468 /* ProfileViewModel.swift */,
 				E8B6F2FD29C1BBC6007DF468 /* ProfileView.swift */,
+				E8B6F2FF29C1ED8B007DF468 /* PhotoPicker.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				E8B6F29129BF09D7007DF468 /* ShowAPIService.swift in Sources */,
 				E8B6F28829BEFD9F007DF468 /* DecoderService.swift in Sources */,
 				E8B6F2B929BF54E8007DF468 /* Assets+Generated.swift in Sources */,
+				E8B6F30029C1ED8B007DF468 /* PhotoPicker.swift in Sources */,
 				E8B6F2BA29BF54E8007DF468 /* Localizable+Generated.swift in Sources */,
 				E8B6F28A29BEFDA8007DF468 /* KeychainService.swift in Sources */,
 				E8B6F2D629C065C9007DF468 /* LoginView.swift in Sources */,
