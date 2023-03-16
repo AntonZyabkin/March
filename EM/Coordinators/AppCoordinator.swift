@@ -40,10 +40,10 @@ final class AppCoordinator: ObservableObject {
         ProfileView()
     }
     
-    func home() -> HomeScreenView {
+    func home() -> HomeView {
         let shopAPIService = ShopAPIService(networkService: networkService)
         let homeViewModel = HomeViewModel(shopApiService: shopAPIService, coordinator: self)
-        var homeScreenView = HomeScreenView()
+        var homeScreenView = HomeView()
         homeScreenView.viewModel = homeViewModel
         return homeScreenView
     }

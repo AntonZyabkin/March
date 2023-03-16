@@ -24,8 +24,34 @@ internal enum L10n {
     internal static let signInGoogle = L10n.tr("Localizable", "button.signInGoogle", fallback: "Sing in with Google")
   }
   internal enum Home {
+    /// Brands
+    internal static let brands = L10n.tr("Localizable", "home.brands", fallback: "Brands")
+    /// Cars
+    internal static let cars = L10n.tr("Localizable", "home.cars", fallback: "Cars")
     /// Вход
-    internal static let title = L10n.tr("Localizable", "home.title", fallback: "Вход")
+    internal static let flashSale = L10n.tr("Localizable", "home.flashSale", fallback: "Вход")
+    /// Furniture
+    internal static let furniture = L10n.tr("Localizable", "home.furniture", fallback: "Furniture")
+    /// Games
+    internal static let games = L10n.tr("Localizable", "home.games", fallback: "Games")
+    /// Headphones
+    internal static let headphones = L10n.tr("Localizable", "home.headphones", fallback: "Headphones")
+    /// Kids
+    internal static let kids = L10n.tr("Localizable", "home.kids", fallback: "Kids")
+    /// Location
+    internal static let lacation = L10n.tr("Localizable", "home.lacation", fallback: "Location")
+    /// Latest
+    internal static let latest = L10n.tr("Localizable", "home.latest", fallback: "Latest")
+    /// Phones
+    internal static let phones = L10n.tr("Localizable", "home.phones", fallback: "Phones")
+    /// What are you looking for?
+    internal static let searchPlaceholder = L10n.tr("Localizable", "home.searchPlaceholder", fallback: "What are you looking for?")
+    /// Trade by
+    internal static let title1 = L10n.tr("Localizable", "home.title1", fallback: "Trade by")
+    /// bata
+    internal static let title2 = L10n.tr("Localizable", "home.title2", fallback: "bata")
+    /// View all
+    internal static let viewAll = L10n.tr("Localizable", "home.viewAll", fallback: "View all")
   }
   internal enum Login {
     /// First name

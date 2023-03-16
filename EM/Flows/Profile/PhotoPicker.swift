@@ -15,14 +15,10 @@ struct SUImagePickerView: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
     
     func makeCoordinator() -> ImagePickerViewCoordinator {
-        print("makeCoordinator")
-
         return ImagePickerViewCoordinator(image: $image, isPresented: $isPresented)
     }
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
-        print("makeUIViewController")
-
         let pickerController = UIImagePickerController()
         pickerController.sourceType = sourceType
         pickerController.delegate = context.coordinator
@@ -35,7 +31,7 @@ struct SUImagePickerView: UIViewControllerRepresentable {
 
 }
 
-class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+final class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @Binding var image: Image
     @Binding var isPresented: Bool
@@ -46,8 +42,6 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print("imagePickerController")
-
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.image = Image(uiImage: image)
         }
@@ -55,7 +49,6 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("imagePickerControllerDidCancel")
         self.isPresented = false
     }
     

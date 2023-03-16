@@ -16,13 +16,13 @@ struct ProfileView: View {
     @State private var shouldPresentCamera = false
     
     private let profileElements = [
-        ProfileElement(icon: Asset.folder, title: L10n.Profile.tradeStore, isEditable: true),
-        ProfileElement(icon: Asset.folder, title: L10n.Profile.paymentMethod, isEditable: true),
-        ProfileElement(icon: Asset.folder, title: L10n.Profile.balance, aditionalInfo: "1593", isEditable: false),
-        ProfileElement(icon: Asset.folder, title: L10n.Profile.tradeHistory, isEditable: true),
-        ProfileElement(icon: Asset.refrash, title: L10n.Profile.restorePurchase, isEditable: true),
-        ProfileElement(icon: Asset.help, title: L10n.Profile.help, isEditable: false),
-        ProfileElement(icon: Asset.logOut, title: L10n.Profile.logOut, isEditable: false)
+        ProfileElement(icon: Asset.Profile.folder, title: L10n.Profile.tradeStore, isEditable: true),
+        ProfileElement(icon: Asset.Profile.folder, title: L10n.Profile.paymentMethod, isEditable: true),
+        ProfileElement(icon: Asset.Profile.folder, title: L10n.Profile.balance, aditionalInfo: "1593", isEditable: false),
+        ProfileElement(icon: Asset.Profile.folder, title: L10n.Profile.tradeHistory, isEditable: true),
+        ProfileElement(icon: Asset.Profile.refrash, title: L10n.Profile.restorePurchase, isEditable: true),
+        ProfileElement(icon: Asset.Profile.help, title: L10n.Profile.help, isEditable: false),
+        ProfileElement(icon: Asset.Profile.logOut, title: L10n.Profile.logOut, isEditable: false)
     ]
     
     var body: some View {
@@ -30,15 +30,15 @@ struct ProfileView: View {
             Color.pageBackground
                 .ignoresSafeArea()
             
-            //            GeometryReader { Geometry in
-            //                ZStack  {
-            //                    Image("3")
-            //                        .resizable()
-            //                        .aspectRatio(contentMode: .fill)
-            //                        .edgesIgnoringSafeArea(.all)
-            ////                        .opacity(0.8)
-            //                }
-            //            }
+//                        GeometryReader { Geometry in
+//                            ZStack  {
+//                                Image("3")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fill)
+//                                    .edgesIgnoringSafeArea(.all)
+//            //                        .opacity(0.8)
+//                            }
+//                        }
             VStack {
                 //MARK: - main views
                 VStack(alignment: .center) {
@@ -79,7 +79,7 @@ struct ProfileView: View {
                         //
                     } label: {
                         ZStack {
-                            Image(asset: Asset.upload)
+                            Image(asset: Asset.Profile.upload)
                                 .resizable()
                                 .offset(x: -96)
                                 .frame(width: 14, height: 16)
@@ -134,7 +134,7 @@ struct OptionView: View {
             Text(data.title)
             Spacer()
             if data.isEditable {
-                Image(asset: Asset.arrow)
+                Image(asset: Asset.Profile.arrow)
             }
             if let additionalInfo = data.additionalInfo {
                 Text("$ \(additionalInfo)")

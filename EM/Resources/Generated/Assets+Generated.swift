@@ -26,23 +26,42 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Asset {
   internal static let _1 = ImageAsset(name: "1")
   internal static let _2 = ImageAsset(name: "2")
+  internal static let _3 = ImageAsset(name: "3")
+  internal static let _4 = ImageAsset(name: "4")
   internal static let accentColor = ColorAsset(name: "AccentColor")
-  internal static let arrow = ImageAsset(name: "arrow")
-  internal static let folder = ImageAsset(name: "folder")
-  internal static let help = ImageAsset(name: "help")
-  internal static let logOut = ImageAsset(name: "logOut")
-  internal static let refrash = ImageAsset(name: "refrash")
-  internal static let upload = ImageAsset(name: "upload")
-  internal static let busketTabBar = ImageAsset(name: "busketTabBar")
-  internal static let homeTabBar = ImageAsset(name: "homeTabBar")
-  internal static let likeTabBar = ImageAsset(name: "likeTabBar")
-  internal static let messageTabBar = ImageAsset(name: "messageTabBar")
-  internal static let profileTabBar = ImageAsset(name: "profileTabBar")
+  internal enum Home {
+    internal static let bad = ImageAsset(name: "Home/bad")
+    internal static let car = ImageAsset(name: "Home/car")
+    internal static let earpods = ImageAsset(name: "Home/earpods")
+    internal static let gamePad = ImageAsset(name: "Home/gamePad")
+    internal static let heart = ImageAsset(name: "Home/heart")
+    internal static let menu = ImageAsset(name: "Home/menu")
+    internal static let phone = ImageAsset(name: "Home/phone")
+    internal static let plus = ImageAsset(name: "Home/plus")
+    internal static let robot = ImageAsset(name: "Home/robot")
+    internal static let search = ImageAsset(name: "Home/search")
+  }
+  internal enum Profile {
+    internal static let arrow = ImageAsset(name: "Profile/arrow")
+    internal static let folder = ImageAsset(name: "Profile/folder")
+    internal static let help = ImageAsset(name: "Profile/help")
+    internal static let logOut = ImageAsset(name: "Profile/logOut")
+    internal static let refrash = ImageAsset(name: "Profile/refrash")
+    internal static let upload = ImageAsset(name: "Profile/upload")
+  }
+  internal enum TabBar {
+    internal static let busketTabBar = ImageAsset(name: "TabBar/busketTabBar")
+    internal static let homeTabBar = ImageAsset(name: "TabBar/homeTabBar")
+    internal static let likeTabBar = ImageAsset(name: "TabBar/likeTabBar")
+    internal static let messageTabBar = ImageAsset(name: "TabBar/messageTabBar")
+    internal static let profileTabBar = ImageAsset(name: "TabBar/profileTabBar")
+  }
   internal static let apple = ImageAsset(name: "apple")
   internal static let eye1 = ImageAsset(name: "eye 1")
   internal static let eye = ImageAsset(name: "eye")
   internal static let eye2 = ImageAsset(name: "eye2")
   internal static let google = ImageAsset(name: "google")
+  internal static let testProfileImage = ImageAsset(name: "testProfileImage")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

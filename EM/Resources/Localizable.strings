@@ -26,7 +26,20 @@
 
 
 // MARK: Home
-"home.title" = "Вход";
+"home.title1" = "Trade by";
+"home.title2" = "bata";
+"home.lacation" = "Location";
+"home.searchPlaceholder" = "What are you looking for?";
+"home.phones" = "Phones";
+"home.headphones" = "Headphones";
+"home.games" = "Games";
+"home.cars" = "Cars";
+"home.furniture" = "Furniture";
+"home.kids" = "Kids";
+"home.latest" = "Latest";
+"home.viewAll" = "View all";
+"home.flashSale" = "Вход";
+"home.brands" = "Brands";
 
 // MARK: Profile
 "profile.title" = "Profile";
