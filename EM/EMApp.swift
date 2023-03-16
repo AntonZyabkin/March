@@ -14,7 +14,8 @@ struct EMApp: App {
     
     var body: some Scene {
         WindowGroup {
-            appCoordinator.test()
+//            appCoordinator.test()
+            TabBarView()
         }
     }
 }

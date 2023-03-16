@@ -17,15 +17,15 @@ struct LoginView: View {
         ZStack(alignment: .top) {
             Color.pageBackground
                 .ignoresSafeArea()
-            GeometryReader { Geometry in
-                ZStack  {
-                    Image("2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .edgesIgnoringSafeArea(.all)
-                        .opacity(0.5)
-                }
-            }
+//            GeometryReader { Geometry in
+//                ZStack  {
+//                    Image("2")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+//                        .edgesIgnoringSafeArea(.all)
+//                        .opacity(0.5)
+//                }
+//            }
             VStack(alignment: .center) {
                 Text(L10n.Login.title)
                     .font(.montserrat(.bold, size: 28))

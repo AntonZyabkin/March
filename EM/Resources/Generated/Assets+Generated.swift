@@ -50,9 +50,9 @@ internal enum Asset {
     internal static let upload = ImageAsset(name: "Profile/upload")
   }
   internal enum TabBar {
-    internal static let busketTabBar = ImageAsset(name: "TabBar/busketTabBar")
+    internal static let basketTabBar = ImageAsset(name: "TabBar/basketTabBar")
     internal static let homeTabBar = ImageAsset(name: "TabBar/homeTabBar")
-    internal static let likeTabBar = ImageAsset(name: "TabBar/likeTabBar")
+    internal static let favoritesTabBar = ImageAsset(name: "TabBar/likeTabBar")
     internal static let messageTabBar = ImageAsset(name: "TabBar/messageTabBar")
     internal static let profileTabBar = ImageAsset(name: "TabBar/profileTabBar")
   }

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import PhotosUI
 
 
 protocol ProfileViewModelProtocol {
@@ -15,12 +14,5 @@ protocol ProfileViewModelProtocol {
 final class ProfileViewModel {
     
     
-}
-
-
-extension ProfileViewModel: ProfileViewModelProtocol {
-    func imageFromPhone() {
-        
-    }
 }
 

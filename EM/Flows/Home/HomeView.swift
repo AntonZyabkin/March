@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var toggle = false
+    
+    
+    @State private var selectedView = 1
+    
+    
+    
     var viewModel: HomeViewModelProtocol?
     var body: some View {
         ZStack(alignment: .top) {
-            Color.pageBackground
+            Color.gray
                 .ignoresSafeArea()
             
-            GeometryReader { Geometry in
-                ZStack  {
-                    Image("4")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .edgesIgnoringSafeArea(.all)
-                    //                        .opacity(0.8)
-                }
-            }
+//            GeometryReader { Geometry in
+//                ZStack  {
+//                    Image("4")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+//                        .edgesIgnoringSafeArea(.all)
+//                        .opacity(0.3)
+//                }
+//            }
         }
-        
     }
 }
 struct HomeScreenView_Previews: PreviewProvider {

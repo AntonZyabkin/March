@@ -38,6 +38,15 @@
 		E8B6F2FC29C1BBAC007DF468 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2FB29C1BBAC007DF468 /* ProfileViewModel.swift */; };
 		E8B6F2FE29C1BBC6007DF468 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2FD29C1BBC6007DF468 /* ProfileView.swift */; };
 		E8B6F30029C1ED8B007DF468 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F2FF29C1ED8B007DF468 /* PhotoPicker.swift */; };
+		E8B6F30F29C322DE007DF468 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F30E29C322DE007DF468 /* TabBarItemsPreferenceKey.swift */; };
+		E8B6F31129C322FC007DF468 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31029C322FC007DF468 /* TabBarItem.swift */; };
+		E8B6F31329C32322007DF468 /* CustonTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31229C32322007DF468 /* CustonTabBarContainerView.swift */; };
+		E8B6F31529C3236B007DF468 /* CustonTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31429C3236B007DF468 /* CustonTabBarView.swift */; };
+		E8B6F31729C323C9007DF468 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31629C323C9007DF468 /* TabBarView.swift */; };
+		E8B6F31A29C323E0007DF468 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31929C323E0007DF468 /* TabBarViewModel.swift */; };
+		E8B6F31D29C33474007DF468 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31C29C33474007DF468 /* FavoritesView.swift */; };
+		E8B6F32029C3350E007DF468 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31F29C3350E007DF468 /* BasketView.swift */; };
+		E8B6F32329C33529007DF468 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F32229C33529007DF468 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +85,15 @@
 		E8B6F2FB29C1BBAC007DF468 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E8B6F2FD29C1BBC6007DF468 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E8B6F2FF29C1ED8B007DF468 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		E8B6F30E29C322DE007DF468 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		E8B6F31029C322FC007DF468 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		E8B6F31229C32322007DF468 /* CustonTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonTabBarContainerView.swift; sourceTree = "<group>"; };
+		E8B6F31429C3236B007DF468 /* CustonTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonTabBarView.swift; sourceTree = "<group>"; };
+		E8B6F31629C323C9007DF468 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		E8B6F31929C323E0007DF468 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		E8B6F31C29C33474007DF468 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		E8B6F31F29C3350E007DF468 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		E8B6F32229C33529007DF468 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +150,7 @@
 			children = (
 				E8B6F2C829BF7D06007DF468 /* Info.plist */,
 				E8B6F26F29BEF8F5007DF468 /* EMApp.swift */,
+				E8B6F30C29C32296007DF468 /* CustomViews */,
 				E8B6F27F29BEFCEB007DF468 /* Coordinators */,
 				E8B6F27E29BEFCC7007DF468 /* Flows */,
 				E8B6F27D29BEFCA0007DF468 /* Core */,
@@ -161,10 +180,14 @@
 		E8B6F27E29BEFCC7007DF468 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				E8B6F2FA29C1BB80007DF468 /* Profile */,
 				E8B6F2DB29C09BC3007DF468 /* Registration */,
 				E8B6F2D129C0656B007DF468 /* Login */,
+				E8B6F31829C323CC007DF468 /* TabBar */,
 				E8B6F29429BF11BD007DF468 /* Home */,
+				E8B6F31B29C33452007DF468 /* Favorites */,
+				E8B6F31E29C33492007DF468 /* Basket */,
+				E8B6F32129C3351F007DF468 /* Message */,
+				E8B6F2FA29C1BB80007DF468 /* Profile */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -293,6 +316,58 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		E8B6F30C29C32296007DF468 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F30D29C322A0007DF468 /* CustomTabBar */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		E8B6F30D29C322A0007DF468 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F30E29C322DE007DF468 /* TabBarItemsPreferenceKey.swift */,
+				E8B6F31029C322FC007DF468 /* TabBarItem.swift */,
+				E8B6F31229C32322007DF468 /* CustonTabBarContainerView.swift */,
+				E8B6F31429C3236B007DF468 /* CustonTabBarView.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		E8B6F31829C323CC007DF468 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F31629C323C9007DF468 /* TabBarView.swift */,
+				E8B6F31929C323E0007DF468 /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		E8B6F31B29C33452007DF468 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F31C29C33474007DF468 /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		E8B6F31E29C33492007DF468 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F31F29C3350E007DF468 /* BasketView.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		E8B6F32129C3351F007DF468 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				E8B6F32229C33529007DF468 /* MessageView.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -415,6 +490,7 @@
 			files = (
 				E8B6F29A29BF1AFC007DF468 /* AppCoordinator.swift in Sources */,
 				E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */,
+				E8B6F31729C323C9007DF468 /* TabBarView.swift in Sources */,
 				E8B6F28D29BEFF5D007DF468 /* LatestViewedResponce.swift in Sources */,
 				E8B6F29629BF1217007DF468 /* HomeViewModel.swift in Sources */,
 				E8B6F2D829C06FB7007DF468 /* ViewExtensions.swift in Sources */,
@@ -424,10 +500,18 @@
 				E8B6F29129BF09D7007DF468 /* ShowAPIService.swift in Sources */,
 				E8B6F28829BEFD9F007DF468 /* DecoderService.swift in Sources */,
 				E8B6F2B929BF54E8007DF468 /* Assets+Generated.swift in Sources */,
+				E8B6F32329C33529007DF468 /* MessageView.swift in Sources */,
+				E8B6F31529C3236B007DF468 /* CustonTabBarView.swift in Sources */,
 				E8B6F30029C1ED8B007DF468 /* PhotoPicker.swift in Sources */,
+				E8B6F31129C322FC007DF468 /* TabBarItem.swift in Sources */,
 				E8B6F2BA29BF54E8007DF468 /* Localizable+Generated.swift in Sources */,
+				E8B6F31329C32322007DF468 /* CustonTabBarContainerView.swift in Sources */,
 				E8B6F28A29BEFDA8007DF468 /* KeychainService.swift in Sources */,
+				E8B6F32029C3350E007DF468 /* BasketView.swift in Sources */,
+				E8B6F31A29C323E0007DF468 /* TabBarViewModel.swift in Sources */,
 				E8B6F2D629C065C9007DF468 /* LoginView.swift in Sources */,
+				E8B6F31D29C33474007DF468 /* FavoritesView.swift in Sources */,
+				E8B6F30F29C322DE007DF468 /* TabBarItemsPreferenceKey.swift in Sources */,
 				E8B6F29829BF18AF007DF468 /* HomeView.swift in Sources */,
 				E8B6F2DD29C09BEC007DF468 /* RegistrationView.swift in Sources */,
 				E8B6F2C429BF6EAB007DF468 /* Extensions.swift in Sources */,
