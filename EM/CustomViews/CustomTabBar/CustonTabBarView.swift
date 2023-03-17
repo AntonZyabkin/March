@@ -35,7 +35,7 @@ extension CustonTabBarView {
             Image(asset: tab.icomAsset)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 25, height: 25, alignment: .center)
+                .frame(width: 20, height: 20, alignment: .center)
                 .padding(12)
                 .foregroundColor(selection == tab ? .iconActiveForeground : .iconInactiveForeground)
                 .background(selection == tab ? .iconBackground : Color.clear)
@@ -46,31 +46,20 @@ extension CustonTabBarView {
     }
     
     private var tabBarVersion: some View {
-        ZStack {
-            VStack {
-                RoundedRectangle(cornerRadius: 20)
-                Rectangle()
+        HStack {
+            ForEach(tabs, id: \.self) { tab in
+                tabView(tab: tab)
+                    .onTapGesture {
+                        swifchToTab(tab: tab)
+                    }
             }
-            .foregroundColor(.pink)
-            .frame(width: .infinity, height: 120, alignment: .center)
-            HStack {
-                ForEach(tabs, id: \.self) { tab in
-                    tabView(tab: tab)
-                        .onTapGesture {
-                            swifchToTab(tab: tab)
-                        }
-                }
-            }
-            .padding(6)
-//            .background(Color.white.edgesIgnoringSafeArea(.all))
-            .background(Color.pink.edgesIgnoringSafeArea(.all))
-//
-//            .cornerRadius(15)
         }
+        .padding(6)
+        .padding(.bottom, 25)
+        .background(Color.white.edgesIgnoringSafeArea(.all))
+        .cornerRadius(25)
     }
     private func swifchToTab(tab: TabBarItem) {
-        withAnimation(.easeInOut) {
-            selection = tab
-        }
+        selection = tab
     }
 }

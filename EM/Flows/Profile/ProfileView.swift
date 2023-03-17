@@ -44,12 +44,13 @@ struct ProfileView: View {
                 VStack(alignment: .center) {
                     Text(L10n.Profile.title)
                         .font(.montserrat(.bold, size: 17))
-                        .foregroundColor(.darkGray)
-                        .padding(.top, 21)
+                        .foregroundColor(.black)
+                        .padding(.top, 69)
                     ZStack {
                         Circle()
                             .stroke(Color.iconInactiveForeground, lineWidth: 4)
-                        image
+//                        image
+                        Image(asset: Asset.testProfileImage)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .cornerRadius(.infinity)
@@ -111,6 +112,7 @@ struct ProfileView: View {
                 
             }
         }
+        .ignoresSafeArea()
     }
 }
 

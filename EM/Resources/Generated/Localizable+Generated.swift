@@ -39,7 +39,7 @@ internal enum L10n {
     /// Kids
     internal static let kids = L10n.tr("Localizable", "home.kids", fallback: "Kids")
     /// Location
-    internal static let lacation = L10n.tr("Localizable", "home.lacation", fallback: "Location")
+    internal static let location = L10n.tr("Localizable", "home.lacation", fallback: "Location")
     /// Latest
     internal static let latest = L10n.tr("Localizable", "home.latest", fallback: "Latest")
     /// Phones

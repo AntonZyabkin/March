@@ -22,8 +22,11 @@ struct CustonTabBarContainerView<Content: View>: View {
         VStack(spacing: 0) {
             ZStack {
                 content
+                VStack {
+                    Spacer()
+                    CustonTabBarView(tabs: tabs, selection: $selection)
+                }
             }
-            CustonTabBarView(tabs: tabs, selection: $selection)
         }
         .onPreferenceChange(TabBarItemsPreferenceKey.self) { value in
             self.tabs = value

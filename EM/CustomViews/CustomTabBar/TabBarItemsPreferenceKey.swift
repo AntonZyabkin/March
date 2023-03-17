@@ -21,7 +21,7 @@ struct TabBarItemViewModifier: ViewModifier {
     @Binding var selection: TabBarItem
     func body(content: Content) -> some View {
         content
-            .opacity(selection == tab ? 1.0 : 0.0)
+            .opacity(selection == tab ? 1 : 0)
             .preference(key: TabBarItemsPreferenceKey.self, value: [tab] )
     }
 }

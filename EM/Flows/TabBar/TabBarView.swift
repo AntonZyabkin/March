@@ -23,11 +23,12 @@ struct TabBarView: View {
                     .tabBatItem(tab: .basket, selection: $tabBarSelection)
                 MessageView()
                     .tabBatItem(tab: .message, selection: $tabBarSelection)
-                ProfileView()
+                ProfileView().ignoresSafeArea()
                     .tabBatItem(tab: .profile, selection: $tabBarSelection)
+                    
             }
+            .cornerRadius(25)
             .ignoresSafeArea()
-
         }
     }
 }

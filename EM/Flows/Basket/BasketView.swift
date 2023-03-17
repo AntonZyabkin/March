@@ -9,7 +9,10 @@ import SwiftUI
 
 struct BasketView: View {
     var body: some View {
-        Text("Basket")
+        ZStack {
+            Color.blue
+                .ignoresSafeArea()
+        }
     }
 }
 

@@ -36,17 +36,17 @@ struct LoginView: View {
                         TextField(L10n.Login.first, text: $password)
                         ZStack(alignment: .trailing) {
                             if isHidden {
-                                TextField(L10n.Login.password, text: $password)
-                            } else {
                                 SecureField(L10n.Login.password, text: $password)
+                            } else {
+                                TextField(L10n.Login.password, text: $password)
                             }
                             Button {
                                 isHidden.toggle()
                             } label: {
                                 if isHidden {
-                                    Image(asset: Asset.eye1)
-                                } else {
                                     Image(asset: Asset.eye)
+                                } else {
+                                    Image(asset: Asset.eye1)
                                 }
                             }
                             .aspectRatio(contentMode: .fill)
@@ -63,7 +63,6 @@ struct LoginView: View {
                     Text(L10n.Button.logIn)
                         .blueButtonModifier()
                 }
-                .opacity(0.3)
             }
             .padding(.horizontal, 48)
             
