@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE9D161E19FBA987F6234F9A /* Pods_EM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C998FB1C6B07B9BB809C59FF /* Pods_EM.framework */; };
+		E89D4AC229C4DF5D00E0F69C /* ReusableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4AC129C4DF5D00E0F69C /* ReusableViews.swift */; };
 		E8B6F27029BEF8F5007DF468 /* EMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F26F29BEF8F5007DF468 /* EMApp.swift */; };
 		E8B6F27429BEF8F8007DF468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F27329BEF8F8007DF468 /* Assets.xcassets */; };
 		E8B6F27729BEF8F8007DF468 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F27629BEF8F8007DF468 /* Preview Assets.xcassets */; };
@@ -47,11 +48,13 @@
 		E8B6F31D29C33474007DF468 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31C29C33474007DF468 /* FavoritesView.swift */; };
 		E8B6F32029C3350E007DF468 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31F29C3350E007DF468 /* BasketView.swift */; };
 		E8B6F32329C33529007DF468 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F32229C33529007DF468 /* MessageView.swift */; };
+		E8B6F34329C4D538007DF468 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F34229C4D538007DF468 /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		393F86B5EC6EF010817C3226 /* Pods-EM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.debug.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.debug.xcconfig"; sourceTree = "<group>"; };
 		C998FB1C6B07B9BB809C59FF /* Pods_EM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E89D4AC129C4DF5D00E0F69C /* ReusableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViews.swift; sourceTree = "<group>"; };
 		E8B6F26C29BEF8F5007DF468 /* EM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B6F26F29BEF8F5007DF468 /* EMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMApp.swift; sourceTree = "<group>"; };
 		E8B6F27329BEF8F8007DF468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 		E8B6F31C29C33474007DF468 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		E8B6F31F29C3350E007DF468 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		E8B6F32229C33529007DF468 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		E8B6F34229C4D538007DF468 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,14 +152,14 @@
 		E8B6F26E29BEF8F5007DF468 /* EM */ = {
 			isa = PBXGroup;
 			children = (
-				E8B6F2C829BF7D06007DF468 /* Info.plist */,
 				E8B6F26F29BEF8F5007DF468 /* EMApp.swift */,
 				E8B6F30C29C32296007DF468 /* CustomViews */,
 				E8B6F27F29BEFCEB007DF468 /* Coordinators */,
 				E8B6F27E29BEFCC7007DF468 /* Flows */,
 				E8B6F27D29BEFCA0007DF468 /* Core */,
-				E8B6F27529BEF8F8007DF468 /* Preview Content */,
 				E8B6F2BB29BF5629007DF468 /* Resources */,
+				E8B6F27529BEF8F8007DF468 /* Preview Content */,
+				E8B6F2C829BF7D06007DF468 /* Info.plist */,
 			);
 			path = EM;
 			sourceTree = "<group>";
@@ -252,6 +256,7 @@
 			children = (
 				E8B6F29529BF1217007DF468 /* HomeViewModel.swift */,
 				E8B6F29729BF18AF007DF468 /* HomeView.swift */,
+				E8B6F34229C4D538007DF468 /* HomeModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				E8B6F30D29C322A0007DF468 /* CustomTabBar */,
+				E89D4AC129C4DF5D00E0F69C /* ReusableViews.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -490,6 +496,8 @@
 			files = (
 				E8B6F29A29BF1AFC007DF468 /* AppCoordinator.swift in Sources */,
 				E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */,
+				E8B6F34329C4D538007DF468 /* HomeModel.swift in Sources */,
+				E89D4AC229C4DF5D00E0F69C /* ReusableViews.swift in Sources */,
 				E8B6F31729C323C9007DF468 /* TabBarView.swift in Sources */,
 				E8B6F28D29BEFF5D007DF468 /* LatestViewedResponce.swift in Sources */,
 				E8B6F29629BF1217007DF468 /* HomeViewModel.swift in Sources */,

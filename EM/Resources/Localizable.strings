@@ -28,7 +28,7 @@
 // MARK: Home
 "home.title1" = "Trade by";
 "home.title2" = "bata";
-"home.lacation" = "Location";
+"home.location" = "Location";
 "home.searchPlaceholder" = "What are you looking for?";
 "home.phones" = "Phones";
 "home.headphones" = "Headphones";
@@ -38,7 +38,7 @@
 "home.kids" = "Kids";
 "home.latest" = "Latest";
 "home.viewAll" = "View all";
-"home.flashSale" = "Вход";
+"home.flashSale" = "Flash Sale";
 "home.brands" = "Brands";
 
 // MARK: Profile

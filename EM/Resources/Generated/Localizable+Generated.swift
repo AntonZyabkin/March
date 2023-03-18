@@ -28,8 +28,8 @@ internal enum L10n {
     internal static let brands = L10n.tr("Localizable", "home.brands", fallback: "Brands")
     /// Cars
     internal static let cars = L10n.tr("Localizable", "home.cars", fallback: "Cars")
-    /// Вход
-    internal static let flashSale = L10n.tr("Localizable", "home.flashSale", fallback: "Вход")
+    /// Flash Sale
+    internal static let flashSale = L10n.tr("Localizable", "home.flashSale", fallback: "Flash Sale")
     /// Furniture
     internal static let furniture = L10n.tr("Localizable", "home.furniture", fallback: "Furniture")
     /// Games
@@ -38,10 +38,10 @@ internal enum L10n {
     internal static let headphones = L10n.tr("Localizable", "home.headphones", fallback: "Headphones")
     /// Kids
     internal static let kids = L10n.tr("Localizable", "home.kids", fallback: "Kids")
-    /// Location
-    internal static let location = L10n.tr("Localizable", "home.lacation", fallback: "Location")
     /// Latest
     internal static let latest = L10n.tr("Localizable", "home.latest", fallback: "Latest")
+    /// Location
+    internal static let location = L10n.tr("Localizable", "home.location", fallback: "Location")
     /// Phones
     internal static let phones = L10n.tr("Localizable", "home.phones", fallback: "Phones")
     /// What are you looking for?

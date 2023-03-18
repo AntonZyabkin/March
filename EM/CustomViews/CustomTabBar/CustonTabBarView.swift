@@ -31,18 +31,16 @@ struct CustonTabBarView_Previews: PreviewProvider {
 
 extension CustonTabBarView {
     private func tabView(tab: TabBarItem) -> some View {
-        ZStack {
-            Image(asset: tab.icomAsset)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20, alignment: .center)
-                .padding(12)
-                .foregroundColor(selection == tab ? .iconActiveForeground : .iconInactiveForeground)
-                .background(selection == tab ? .iconBackground : Color.clear)
-                .cornerRadius(.infinity)
-        }
-        .padding(.vertical, 8)
-        .frame(maxWidth: .infinity)
+        Image(asset: tab.icomAsset)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20, height: 20, alignment: .center)
+            .padding(12)
+            .foregroundColor(selection == tab ? .iconActiveForeground : .iconInactiveForeground)
+            .background(selection == tab ? .iconBackground : Color.clear)
+            .cornerRadius(.infinity)
+            .padding(.vertical, 8)
+            .frame(maxWidth: .infinity)
     }
     
     private var tabBarVersion: some View {

@@ -51,8 +51,8 @@ internal enum Asset {
   }
   internal enum TabBar {
     internal static let basketTabBar = ImageAsset(name: "TabBar/basketTabBar")
+    internal static let favoritesTabBar = ImageAsset(name: "TabBar/favoritesTabBar")
     internal static let homeTabBar = ImageAsset(name: "TabBar/homeTabBar")
-    internal static let favoritesTabBar = ImageAsset(name: "TabBar/likeTabBar")
     internal static let messageTabBar = ImageAsset(name: "TabBar/messageTabBar")
     internal static let profileTabBar = ImageAsset(name: "TabBar/profileTabBar")
   }

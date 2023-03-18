@@ -7,9 +7,11 @@
 
 import Foundation
 import SwiftUI
+
 protocol HomeViewModelProtocol {
     func getlatest()
     var image: Image { get set }
+    var homeModel: HomeModel { get set }
 }
 
 final class HomeViewModel: ObservableObject {
@@ -17,7 +19,17 @@ final class HomeViewModel: ObservableObject {
     private let coordinator: AppCoordinator
     
     @Published var image = Image(systemName: "bell")
-    
+    @Published var homeModel = HomeModel(
+        homeCategories:
+            [
+                HomeCategory(imageAsset: Asset.Home.phone, categoruName: L10n.Home.phones),
+                HomeCategory(imageAsset: Asset.Home.earpods, categoruName: L10n.Home.headphones),
+                HomeCategory(imageAsset: Asset.Home.gamePad, categoruName: L10n.Home.games),
+                HomeCategory(imageAsset: Asset.Home.car, categoruName: L10n.Home.cars),
+                HomeCategory(imageAsset: Asset.Home.bad, categoruName: L10n.Home.furniture),
+                HomeCategory(imageAsset: Asset.Home.robot, categoruName: L10n.Home.kids),
+            ], latestItems: [], flashSaleItems: [], brandsItems: []
+    )
     
     init(shopApiService: ShopAPIServicable, coordinator: AppCoordinator) {
         self.shopApiService = shopApiService
@@ -53,16 +65,7 @@ extension HomeViewModel: HomeViewModelProtocol {
 //                    print(latestViewed)
                 }
             } catch let error as NetworkError {
-                switch error {
-                case .selfError:
                     await showError(error)
-                case .responseError:
-                    await showError(error)
-                case .unknownError:
-                    await showError(error)
-                case .decodeError(let decodeError):
-                    await showError(decodeError)
-                }
             }
         }
     }
@@ -70,7 +73,6 @@ extension HomeViewModel: HomeViewModelProtocol {
 
 
 extension Image {
-    /// Initializes a SwiftUI `Image` from data.
     init?(data: Data) {
         #if canImport(UIKit)
         if let uiImage = UIImage(data: data) {
