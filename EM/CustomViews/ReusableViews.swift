@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+
+
 struct ImageInCircle: View {
     let image: ImageAsset
     let itemPadding: CGFloat
@@ -27,42 +29,50 @@ struct ImageInCircle: View {
 struct CategoryScrollView: View {
     let category: [HomeCategory]
     let mainHorisontalPadding: CGFloat
-    let itemWidth: CGFloat = 20
-    let itemPadding: CGFloat = 12
+    let itemPadding: CGFloat = 10
+    let spacingItems: CGFloat
+    let itemWidth: CGFloat
+    
+    init(category: [HomeCategory], _ mainHorisontalPadding: CGFloat, _ spacingItems: CGFloat, _ itemWidth: CGFloat) {
+        self.category = category
+        self.mainHorisontalPadding = mainHorisontalPadding
+        self.spacingItems = spacingItems
+        self.itemWidth = itemWidth
+    }
     
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: itemSpace(geometry: geometry)) {
-                    ForEach(category) { category in
-                        VStack {
-                            ImageInCircle(image: category.imageAsset, itemPadding: itemPadding, itemWidth: itemWidth)
-                            Text(category.categoruName)
-                                .font(.montserrat(.medium, size: 10))
-                                .foregroundColor(.mainGray)
-                                .foregroundColor(.black)
-                        }
-                    }
-                }
-                .padding(.leading, 5)
-            }
+        ScrollView(.horizontal, showsIndicators: false) {
             
+            HStack(spacing: spacingItems) {
+                ForEach(category) { category in
+                    VStack {
+                        ImageInCircle(image: category.imageAsset, itemPadding: 12, itemWidth: 20)
+                            .padding(.bottom, 5)
+                        Text(category.categoruName)
+                            .font(.montserrat(.medium, size: 10))
+                            .foregroundColor(.mainGray)
+                            .foregroundColor(.black)
+                    }
+                    .lineLimit(1)
+                    .frame(maxWidth: itemWidth + spacingItems + itemPadding / 2)
+                    
+                }
+            }
         }
-    }
-    func itemSpace(geometry: GeometryProxy) -> CGFloat {
-        (geometry.size.width - mainHorisontalPadding * 2 - (itemWidth + 2 * itemPadding) * 6 - 10) / 5
     }
 }
 
 struct LatestScrollView: View {
     let latestItems: [LatestItem]
     let spacingItems: CGFloat
-    let geometry: GeometryProxy
+    let itemWidth: CGFloat
     let mainHorizontalPadding: CGFloat
-    init(latestItems: [LatestItem], _ spacingItems: CGFloat, _ geometry: GeometryProxy, _ mainHorizontalPadding: CGFloat) {
+    let itemPadding: CGFloat = 7
+    
+    init(latestItems: [LatestItem], _ spacingItems: CGFloat, _ itemWidth: CGFloat, _ mainHorizontalPadding: CGFloat) {
         self.latestItems = latestItems
         self.spacingItems = spacingItems
-        self.geometry = geometry
+        self.itemWidth = itemWidth
         self.mainHorizontalPadding = mainHorizontalPadding
     }
     
@@ -74,50 +84,51 @@ struct LatestScrollView: View {
                         //
                     } label: {
                         ZStack(alignment: .bottom) {
-                            CornerRoundedImage(width: itemWidth(geometry: geometry), image: item.itemImage)
-                            HStack(alignment: .bottom) {
-                                VStack(alignment: .leading, spacing: 5) {
-                                    Text(item.data.category)
-                                        .font(.montserrat(.bold, size: 7))
-                                        .padding(3)
-                                        .foregroundColor(.black)
-                                        .background(Color.iconBackground).opacity(0.8)
-                                        .cornerRadius(6)
-                                    Text(item.data.name)
-                                        .font(.montserrat(.bold, size: 10))
-                                        .foregroundColor(.white)
+                            CornerRoundedImage(width: itemWidth, image: item.itemImage)
+                            VStack {
+                                HStack(alignment: .bottom) {
                                     
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Spacer()
+                                        
+                                        Text(item.data.category)
+                                            .font(.montserrat(.bold, size: 7))
+                                            .foregroundColor(.black)
+                                            .padding(.vertical, 2)
+                                            .padding(.horizontal, 8)
+                                            .background(Color.iconBackground).opacity(0.9)
+                                            .cornerRadius(6)
+                                        Text(item.data.name)
+                                            .font(.montserrat(.bold, size: 10))
+                                            .foregroundColor(.white)
+                                        
+                                    }
                                     Spacer()
-                                    Text("$ \(String(item.data.price))")
-                                        .font(.montserrat(.bold, size: 8))
-                                        .foregroundColor(.white)
                                 }
-                                .frame(height: 55)
-                                .padding(.bottom, 4)
-                                .padding(.leading,3)
                                 Spacer()
                                 Button {
                                     //
                                 } label: {
-                                    ImageInCircle(image: Asset.Home.plus, itemPadding: 7, itemWidth: 9)
-                                        .foregroundColor(.mainGray)
-                                        .opacity(0.8)
+                                    HStack(alignment: .bottom) {
+                                        Text("$ \(String(item.data.price))")
+                                            .font(.montserrat(.bold, size: 8))
+                                            .foregroundColor(.white)
+                                        Spacer()
+                                        ImageInCircle(image: Asset.Home.plus, itemPadding: 7, itemWidth: 9)
+                                            .foregroundColor(.mainGray)
+                                            .opacity(0.8)
+                                    }
                                 }
                                 
                             }
-                            .padding(.horizontal, 5)
-                            .padding(.bottom, 6)
+                            .lineLimit(1)
+                            .frame(maxWidth: itemWidth - itemPadding * 2)
+                            .padding(itemPadding)
                         }
-                        
                     }
-                    
                 }
             }
         }
-    }
-    
-    func itemWidth(geometry: GeometryProxy) -> CGFloat {
-        (geometry.size.width - 2 * spacingItems - mainHorizontalPadding) / 3
     }
 }
 
@@ -125,105 +136,100 @@ struct FlashSaleScrollView: View {
     let flashSaleItems: [FlashSaleItem]
     let spacingItems: CGFloat
     let mainHorizontalPadding: CGFloat
+    let itemWidth: CGFloat
+    let itemPadding: CGFloat = 7
     
-    init(flashSaleItems: [FlashSaleItem], _ spacingItems: CGFloat, _ mainHorizontalPadding: CGFloat) {
+    init(flashSaleItems: [FlashSaleItem], _ spacingItems: CGFloat, _ mainHorizontalPadding: CGFloat, _ itemWidth: CGFloat) {
         self.flashSaleItems = flashSaleItems
         self.spacingItems = spacingItems
         self.mainHorizontalPadding = mainHorizontalPadding
+        self.itemWidth = itemWidth
     }
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView([.horizontal], showsIndicators: false) {
-                HStack(spacing: spacingItems) {
-                    ForEach(flashSaleItems) { item in
-                        Button {
-                            //
-                        } label: {
-                            ZStack(alignment: .bottom) {
-                                CornerRoundedImage(width: itemWidth(geometry: geometry), image: item.itemImage)
-                                VStack(alignment: .trailing) {
+        ScrollView([.horizontal], showsIndicators: false) {
+            HStack(spacing: spacingItems) {
+                ForEach(flashSaleItems) { item in
+                    Button {
+                        //
+                    } label: {
+                        ZStack(alignment: .bottom) {
+                            CornerRoundedImage(width: itemWidth, image: item.itemImage)
+                            VStack(alignment: .trailing) {
+                                HStack {
+                                    Spacer()
                                     Text("\(String(item.data.discount))% off")
                                         .font(.montserrat(.bold, size: 11))
                                         .frame(width: 55, height: 20, alignment: .center)
                                         .foregroundColor(.white)
                                         .background(Color.saleBackground).opacity(0.8)
                                         .cornerRadius(.infinity)
-                                        .padding(.bottom, 90)
-                                        .padding(.trailing, 6)
-                                    
-                                    HStack(alignment: .bottom) {
-                                        VStack(alignment: .leading, spacing: 9) {
-                                            Text(item.data.category)
-                                                .font(.montserrat(.bold, size: 10))
-                                                .frame(width: 55, height: 20, alignment: .center)
-                                                .foregroundColor(.black)
-                                                .background(Color.iconBackground).opacity(0.8)
-                                                .cornerRadius(.infinity)
-                                            Text(item.data.name)
-                                                .font(.montserrat(.bold, size: 13.5))
-                                                .foregroundColor(.white)
-                                                .padding(.bottom, 24)
-                                            
-                                            Text("$ \(String(item.data.price))")
-                                                .font(.montserrat(.bold, size: 12))
-                                                .foregroundColor(.white)
-                                        }
-                                        .padding(.leading, 10)
-                                        .frame(height: 110)
-                                        Spacer()
-                                        HStack(spacing:4) {
-                                            Button {
-                                                //
-                                            } label: {
-                                                ImageInCircle(image: Asset.Home.heart, itemPadding: 7, itemWidth: 18)
-                                                    .foregroundColor(.mainGray)
-                                                    .opacity(0.8)
-                                            }
-                                            Button {
-                                                //
-                                            } label: {
-                                                ImageInCircle(image: Asset.Home.plus, itemPadding: 10, itemWidth: 18)
-                                                    .foregroundColor(.mainGray)
-                                                    .opacity(0.8)
-                                            }
-                                            
-                                        }
+                                }
+                                Spacer()
+                                HStack(alignment: .bottom) {
+                                    VStack(alignment: .leading, spacing: 9) {
+                                        Text(item.data.category)
+                                            .font(.montserrat(.bold, size: 10))
+                                            .frame(width: 55, height: 20, alignment: .center)
+                                            .foregroundColor(.black)
+                                            .background(Color.iconBackground).opacity(0.8)
+                                            .cornerRadius(.infinity)
+                                        Text(item.data.name)
+                                            .font(.montserrat(.bold, size: 13.5))
+                                            .foregroundColor(.white)
                                         
                                     }
-                                    .padding(.trailing, 4)
-                                    .padding(.bottom, 12)
+                                    Spacer()
+                                }
+                                .padding(.bottom, 12)
+                                HStack(alignment: .center, spacing: 4) {
+                                    Text("$ \(String(item.data.price))")
+                                        .font(.montserrat(.bold, size: 14))
+                                        .foregroundColor(.white)
+                                    Spacer()
+                                    Button {
+                                        //
+                                    } label: {
+                                        ImageInCircle(image: Asset.Home.heart, itemPadding: 7, itemWidth: 18)
+                                            .foregroundColor(.mainGray)
+                                            .opacity(0.8)
+                                    }
+                                    Button {
+                                        //
+                                    } label: {
+                                        ImageInCircle(image: Asset.Home.plus, itemPadding: 10, itemWidth: 18)
+                                            .foregroundColor(.mainGray)
+                                            .opacity(0.8)
+                                    }
+                                    
                                 }
                             }
-                            
+                            .lineLimit(1)
+                            .frame(maxWidth: itemWidth - itemPadding * 2)
+                            .padding(itemPadding)
                         }
-                        
                     }
                 }
             }
         }
-    }
-    
-    func itemWidth(geometry: GeometryProxy) -> CGFloat {
-        (geometry.size.width - 2 * mainHorizontalPadding - spacingItems) / 2
     }
 }
 
 struct BrandsScrollView: View {
     let latestItem: [LatestItem]
     let spacingItems: CGFloat
-    let geometry: GeometryProxy
+    let itemWidth: CGFloat
     let mainHorizontalPadding: CGFloat
     
-    init(brandItems: [BrandsItem], _ spacingItems: CGFloat, _ geometry: GeometryProxy, _ mainHorizontalPadding: CGFloat) {
+    init(brandItems: [BrandsItem], _ spacingItems: CGFloat, _ itemWidth: CGFloat, _ mainHorizontalPadding: CGFloat) {
         self.latestItem = brandItems.map{
             LatestItem(itemImage: $0.itemImage, data: Latest(category: "", name: "", price: 0, imageURL: ""))
         }
         self.spacingItems = spacingItems
-        self.geometry = geometry
+        self.itemWidth = itemWidth
         self.mainHorizontalPadding = mainHorizontalPadding
     }
     var body: some View {
-        LatestScrollView(latestItems: latestItem, spacingItems, geometry, mainHorizontalPadding)
+        LatestScrollView(latestItems: latestItem, spacingItems, itemWidth, mainHorizontalPadding)
     }
 }
 struct CornerRoundedImage: View {
@@ -244,7 +250,7 @@ struct HeaderItems: View {
     let buttonName: String
     let action: () -> Void
     var body: some View {
-        HStack {
+        HStack() {
             Text(headerName)
                 .font(.montserrat(.bold, size: 16))
                 .foregroundColor(.black)
@@ -253,7 +259,7 @@ struct HeaderItems: View {
                 action()
             } label: {
                 Text(buttonName)
-                    .font(.montserrat(.bold, size: 12))
+                    .font(.montserrat(.bold, size: 9))
                     .foregroundColor(.mainGray)
             }
         }

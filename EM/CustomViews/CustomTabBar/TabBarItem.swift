@@ -9,7 +9,7 @@ import SwiftUI
 enum TabBarItem: Hashable {
     case home, favorites, basket, message, profile
     
-    var icomAsset: ImageAsset {
+    var iconAsset: ImageAsset {
         switch self {
         case .home: return Asset.TabBar.homeTabBar
         case .favorites: return Asset.TabBar.favoritesTabBar

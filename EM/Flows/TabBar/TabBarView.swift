@@ -12,8 +12,6 @@ struct TabBarView: View {
     @State private var tabBarSelection: TabBarItem = .home
     var body: some View {
         ZStack {
-            Color.gray
-                .ignoresSafeArea()
             CustonTabBarContainerView(selection: $tabBarSelection) {
                 HomeView()
                     .tabBatItem(tab: .home, selection: $tabBarSelection)
@@ -25,9 +23,7 @@ struct TabBarView: View {
                     .tabBatItem(tab: .message, selection: $tabBarSelection)
                 ProfileView().ignoresSafeArea()
                     .tabBatItem(tab: .profile, selection: $tabBarSelection)
-                    
             }
-            .cornerRadius(25)
             .ignoresSafeArea()
         }
     }

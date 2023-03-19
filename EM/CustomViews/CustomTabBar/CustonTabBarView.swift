@@ -31,7 +31,7 @@ struct CustonTabBarView_Previews: PreviewProvider {
 
 extension CustonTabBarView {
     private func tabView(tab: TabBarItem) -> some View {
-        Image(asset: tab.icomAsset)
+        Image(asset: tab.iconAsset)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 20, height: 20, alignment: .center)

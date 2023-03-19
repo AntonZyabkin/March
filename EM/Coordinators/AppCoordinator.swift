@@ -6,53 +6,37 @@
 //
 
 import SwiftUI
-
-enum AppRoute {
-    case auth
-    case registerAccount
-    case tabbar
-}
+import FlowStacks
 
 
-final class AppCoordinator: ObservableObject {
-    
+struct AppCoordinator: View {
+    enum Screen {
+        case authFlow
+        case homeFlow
+    }
     let decoderService: DecoderService
     let networkService: NetworkService
     let keyChainService: KeychainService
-    
-    @Published var page: MyPage = .home
-    
+    @State var routes: Routes<Screen> = [.root(.authFlow)]
+
     init() {
-        decoderService = DecoderService()
-        networkService = NetworkService(decoderService: decoderService)
-        keyChainService = KeychainService(decoder: decoderService)
+        self.decoderService = DecoderService()
+        self.networkService = NetworkService(decoderService: decoderService)
+        self.keyChainService = KeychainService(decoder: decoderService)
     }
     
-    func auth() {
-        
+    var body: some View {
+        Router($routes) { screen, _ in
+            switch screen {
+            case .authFlow:
+                AuthCoordinator(viewModel: AuthCoordinatorViewModel(decoder: decoderService, showHome: showHome))
+            case .homeFlow:
+                TabBarView()
+            }
+        }
     }
     
-    func registerAccount() {
-        
+    func showHome() {
+        routes.presentCover(.homeFlow)
     }
-    
-    func test() -> ProfileView {
-        ProfileView()
-    }
-    
-    func home() -> HomeView {
-        let shopAPIService = ShopAPIService(networkService: networkService)
-        let homeViewModel = HomeViewModel(shopApiService: shopAPIService, coordinator: self)
-        homeViewModel.fetchPhoto()
-        var homeScreenView = HomeView()
-        homeScreenView.viewModel = homeViewModel
-        return homeScreenView
-    }
-}
-
-
-enum MyPage: String, Identifiable, CaseIterable {
-    case home, auth, registerAccount
-    
-    var id: String { self.rawValue }
 }

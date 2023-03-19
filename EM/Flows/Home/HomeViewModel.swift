@@ -8,16 +8,18 @@
 import Foundation
 import SwiftUI
 
-protocol HomeViewModelProtocol {
+protocol HomeViewModelProtocol: ObservableObject {
     func getlatest()
     var image: Image { get set }
     var homeModel: HomeModel { get set }
+    var searchTextFielt: String { get set }
 }
 
 final class HomeViewModel: ObservableObject {
     private let shopApiService: ShopAPIServicable
     private let coordinator: AppCoordinator
     
+    @State var searchTextFielt: String = ""
     @Published var image = Image(systemName: "bell")
     @Published var homeModel = HomeModel(
         homeCategories:

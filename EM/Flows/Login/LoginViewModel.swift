@@ -5,16 +5,23 @@
 //  Created by Anton Zyabkin on 14.03.2023.
 //
 
-import Foundation
+import SwiftUI
+import FlowStacks
 
-protocol LoginViewModelProtocol {
-}
+final class LoginViewModel: ObservableObject {
+    let showHomeView: () -> Void
+    let completeFlow: () -> Void
 
-final class LoginViewModel {
+    private let keychainServise: KeychainServicable
+    
+    init(showHomeView: @escaping () -> Void, completeFlow: @escaping () -> Void, keychainServise: KeychainServicable) {
+        self.showHomeView = showHomeView
+        self.completeFlow = completeFlow
+        self.keychainServise = keychainServise
+    }
     
     
-}
-
-
-extension LoginViewModel: LoginViewModelProtocol {
+    func loginButtonDidPress() {
+        showHomeView()
+    }
 }

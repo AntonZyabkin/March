@@ -13,6 +13,8 @@ struct LoginView: View {
     @State private var password = ""
     @State private var isHidden = true
 
+    @ObservedObject var viewModel: LoginViewModel
+
     var body: some View {
         ZStack(alignment: .top) {
             Color.pageBackground
@@ -83,6 +85,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: LoginViewModel(showHomeView: {}, completeFlow: {}, keychainServise: KeychainService(decoder: DecoderService())))
     }
 }

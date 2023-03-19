@@ -74,7 +74,7 @@ extension Color {
     static let categoryBackground = Color(hex: "C4C4C4D9")
     static let saleBackground = Color(hex: "F93A3A")
     static let searchFieldBackground = Color(hex: "F5F6F7")
-    
+
     
     //MARK: - Foregrounds
     static let mainBlack = Color(hex: "040402")

@@ -10,13 +10,10 @@ import SwiftUI
 @main
 struct EMApp: App {
     
-    let appCoordinator = AppCoordinator()
     
     var body: some Scene {
         WindowGroup {
-//            appCoordinator.home()
-//            appCoordinator.test()
-            TabBarView()
+            AppCoordinator()
         }
     }
 }

@@ -49,6 +49,8 @@
 		E8B6F32029C3350E007DF468 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31F29C3350E007DF468 /* BasketView.swift */; };
 		E8B6F32329C33529007DF468 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F32229C33529007DF468 /* MessageView.swift */; };
 		E8B6F34329C4D538007DF468 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F34229C4D538007DF468 /* HomeModel.swift */; };
+		E8E2C85129C66F0B00284D9F /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = E8E2C85029C66F0B00284D9F /* FlowStacks */; };
+		E8E2C85929C7813500284D9F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C85829C7813500284D9F /* AuthCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,7 @@
 		E8B6F31F29C3350E007DF468 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		E8B6F32229C33529007DF468 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		E8B6F34229C4D538007DF468 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		E8E2C85829C7813500284D9F /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE9D161E19FBA987F6234F9A /* Pods_EM.framework in Frameworks */,
+				E8E2C85129C66F0B00284D9F /* FlowStacks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				E8B6F29929BF1AFC007DF468 /* AppCoordinator.swift */,
+				E8E2C85829C7813500284D9F /* AuthCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -296,8 +301,8 @@
 		E8B6F2D129C0656B007DF468 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E8B6F2D229C06580007DF468 /* LoginViewModel.swift */,
 				E8B6F2D529C065C9007DF468 /* LoginView.swift */,
+				E8B6F2D229C06580007DF468 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -392,6 +397,9 @@
 			dependencies = (
 			);
 			name = EM;
+			packageProductDependencies = (
+				E8E2C85029C66F0B00284D9F /* FlowStacks */,
+			);
 			productName = EM;
 			productReference = E8B6F26C29BEF8F5007DF468 /* EM.app */;
 			productType = "com.apple.product-type.application";
@@ -421,6 +429,9 @@
 				ru,
 			);
 			mainGroup = E8B6F26329BEF8F5007DF468;
+			packageReferences = (
+				E8E2C84F29C66F0B00284D9F /* XCRemoteSwiftPackageReference "FlowStacks" */,
+			);
 			productRefGroup = E8B6F26D29BEF8F5007DF468 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -519,6 +530,7 @@
 				E8B6F31A29C323E0007DF468 /* TabBarViewModel.swift in Sources */,
 				E8B6F2D629C065C9007DF468 /* LoginView.swift in Sources */,
 				E8B6F31D29C33474007DF468 /* FavoritesView.swift in Sources */,
+				E8E2C85929C7813500284D9F /* AuthCoordinator.swift in Sources */,
 				E8B6F30F29C322DE007DF468 /* TabBarItemsPreferenceKey.swift in Sources */,
 				E8B6F29829BF18AF007DF468 /* HomeView.swift in Sources */,
 				E8B6F2DD29C09BEC007DF468 /* RegistrationView.swift in Sources */,
@@ -732,6 +744,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8E2C84F29C66F0B00284D9F /* XCRemoteSwiftPackageReference "FlowStacks" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnpatrickmorgan/FlowStacks";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8E2C85029C66F0B00284D9F /* FlowStacks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8E2C84F29C66F0B00284D9F /* XCRemoteSwiftPackageReference "FlowStacks" */;
+			productName = FlowStacks;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E8B6F26429BEF8F5007DF468 /* Project object */;
 }

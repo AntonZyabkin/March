@@ -12,6 +12,9 @@ struct RegistrationView: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var email = ""
+    
+    @ObservedObject var viewModel: RegistrationViewModel
+    
     var body: some View {
         ZStack(alignment: .top) {
             Color.pageBackground
@@ -111,6 +114,6 @@ struct RegistrationView: View {
 
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationView()
+        RegistrationView(viewModel: RegistrationViewModel(showLoginView: {}, showHomeView: {}, completeFlow: {}, keychainServise: KeychainService(decoder: DecoderService())))
     }
 }
