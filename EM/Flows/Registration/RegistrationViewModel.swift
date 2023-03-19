@@ -31,6 +31,10 @@ final class RegistrationViewModel: ObservableObject {
         completeFlow()
         showHomeView()
     }
+    
+    deinit {
+        print("RegistrationViewModel")
+    }
 }
 
 

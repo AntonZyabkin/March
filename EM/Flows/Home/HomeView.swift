@@ -54,9 +54,8 @@ struct HomeView: View {
                         .opacity(0)
                 }
             }
-            
-            NavigationView {
-                GeometryReader { geometry in
+            GeometryReader { geometry in
+                NavigationView {
                     VStack {
                         ZStack(alignment: .trailing) {
                             TextField(L10n.Home.searchPlaceholder, text: $searchText)
@@ -91,7 +90,7 @@ struct HomeView: View {
                                 .padding(.leading, mainHorizontalPadding)
                                 .frame(height: threeItemWidth(geometry: geometry) * 1.3)
                                 .padding(.bottom, 12)
-
+                            
                             HeaderItems(headerName: L10n.Home.flashSale, buttonName: L10n.Home.viewAll) {
                                 //some action
                             }
@@ -101,13 +100,13 @@ struct HomeView: View {
                                 .padding(.leading, mainHorizontalPadding)
                                 .frame(height: twoItemWidth(geometry: geometry) * 1.3)
                                 .padding(.bottom, 12)
-
+                            
                             HeaderItems(headerName: L10n.Home.brands, buttonName: L10n.Home.viewAll) {
                                 //some action
                             }
                             .padding(.horizontal, mainHorizontalPadding)
                             .padding(.bottom, -4)
-
+                            
                             BrandsScrollView(brandItems: homeModel.brandsItems, spacingThreeItems, threeItemWidth(geometry: geometry), mainHorizontalPadding)
                                 .padding(.leading, mainHorizontalPadding)
                                 .frame(height: threeItemWidth(geometry: geometry) * 1.3)
@@ -176,7 +175,7 @@ struct HomeView: View {
                 }
             }
         }
-//        .opacity(0.4)
+        //        .opacity(0.4)
     }
     func twoItemWidth(geometry: GeometryProxy) -> CGFloat {
         (geometry.size.width - 2 * mainHorizontalPadding - spacingTwoItems) / 2

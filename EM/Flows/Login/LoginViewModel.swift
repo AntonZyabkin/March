@@ -24,4 +24,8 @@ final class LoginViewModel: ObservableObject {
     func loginButtonDidPress() {
         showHomeView()
     }
+    deinit {
+        print("LoginViewModel")
+    }
+
 }

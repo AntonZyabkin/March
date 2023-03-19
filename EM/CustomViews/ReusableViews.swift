@@ -45,17 +45,20 @@ struct CategoryScrollView: View {
             
             HStack(spacing: spacingItems) {
                 ForEach(category) { category in
-                    VStack {
-                        ImageInCircle(image: category.imageAsset, itemPadding: 12, itemWidth: 20)
-                            .padding(.bottom, 5)
-                        Text(category.categoruName)
-                            .font(.montserrat(.medium, size: 10))
-                            .foregroundColor(.mainGray)
-                            .foregroundColor(.black)
+                    Button {
+                        //
+                    } label: {
+                        VStack {
+                            ImageInCircle(image: category.imageAsset, itemPadding: 12, itemWidth: 20)
+                                .padding(.bottom, 5)
+                            Text(category.categoruName)
+                                .font(.montserrat(.medium, size: 10))
+                                .foregroundColor(.mainGray)
+                                .foregroundColor(.black)
+                        }
+                        .lineLimit(1)
+                        .frame(maxWidth: itemWidth + spacingItems + itemPadding / 2)
                     }
-                    .lineLimit(1)
-                    .frame(maxWidth: itemWidth + spacingItems + itemPadding / 2)
-                    
                 }
             }
         }

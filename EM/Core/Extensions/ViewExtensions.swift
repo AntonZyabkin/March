@@ -20,7 +20,8 @@ extension View {
 struct TextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(width: .infinity, height: 35)
+            .frame(height: 35)
+            .frame(maxWidth: .infinity)
             .background(Color.textFieldBackground)
             .font(.montserrat(.bold, size: 12))
             .cornerRadius(.infinity)

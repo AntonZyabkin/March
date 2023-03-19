@@ -64,7 +64,7 @@ struct RegistrationView: View {
                             .font(.montserrat(.light, size: 11))
                             .foregroundColor(.mainGray)
                         Button {
-                            //
+                            viewModel.showLoginView()
                         } label: {
                             Text(L10n.Button.logIn)
                                 .font(.montserrat(.light, size: 11))
@@ -84,7 +84,8 @@ struct RegistrationView: View {
                         //
                     } label: {
                         singInButtons(Asset.google, title: L10n.Button.signInGoogle)
-                            .frame(width: .infinity, height: 30)
+                            .frame(height: 30)
+                            .frame(maxWidth: .infinity)
 
                     }
                     .padding(.bottom, 28)
@@ -92,7 +93,8 @@ struct RegistrationView: View {
                         //
                     } label: {
                         singInButtons(Asset.apple, title: L10n.Button.signInApple)
-                            .frame(width: .infinity, height: 30)
+                            .frame(height: 30)
+                            .frame(maxWidth: .infinity)
                     }
                 }
                 .padding(.trailing, 10)

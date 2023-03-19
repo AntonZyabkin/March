@@ -11,7 +11,7 @@ import FlowStacks
 struct AuthCoordinator: View {
     
     @ObservedObject var viewModel: AuthCoordinatorViewModel
-
+    
     var body: some View {
         Router($viewModel.routes) { screen, _ in
             switch screen {
@@ -44,20 +44,21 @@ class AuthCoordinatorViewModel: ObservableObject {
     }
     
     func showHomeView() {
-        
+        completeFlow()
     }
     func completeFlow() {
-      RouteSteps.withDelaysIfUnsupported(self, \.routes) {
-        $0.goBackToRoot()
-      }
+        RouteSteps.withDelaysIfUnsupported(self, \.routes) {
+            $0.goBackToRoot()
+        }
+        showHome()
     }
-
-//    private func completeFlow() {
-//        Task { @MainActor in
-//            await $routes.withDelaysIfUnsupported {
-//                $0.goBackToRoot()
-//            }
-//            showHome()
-//        }
-//    }
+    
+    //    private func completeFlow() {
+    //        Task { @MainActor in
+    //            await $routes.withDelaysIfUnsupported {
+    //                $0.goBackToRoot()
+    //            }
+    //            showHome()
+    //        }
+    //    }
 }

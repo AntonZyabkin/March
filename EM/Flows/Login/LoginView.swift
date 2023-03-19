@@ -60,7 +60,7 @@ struct LoginView: View {
                 }
                 .padding(.bottom, 100)
                 Button {
-                    //
+                    viewModel.showHomeView()
                 } label: {
                     Text(L10n.Button.logIn)
                         .blueButtonModifier()
