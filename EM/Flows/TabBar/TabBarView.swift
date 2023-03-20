@@ -9,11 +9,13 @@ import SwiftUI
 
 struct TabBarView: View {
     
+    @ObservedObject var viewModel: TabBarViewModel
+
     @State private var tabBarSelection: TabBarItem = .home
     var body: some View {
         ZStack {
             CustonTabBarContainerView(selection: $tabBarSelection) {
-                HomeView()
+                HomeView(viewModel: HomeViewModel(shopApiService: viewModel.shopApiService))
                     .tabBatItem(tab: .home, selection: $tabBarSelection)
                 FavoritesView()
                     .tabBatItem(tab: .favorites, selection: $tabBarSelection)
@@ -21,16 +23,10 @@ struct TabBarView: View {
                     .tabBatItem(tab: .basket, selection: $tabBarSelection)
                 MessageView()
                     .tabBatItem(tab: .message, selection: $tabBarSelection)
-                ProfileView().ignoresSafeArea()
+                ProfileView(viewModel: ProfileViewModel(logOut: viewModel.showAuthCoordinarot))
                     .tabBatItem(tab: .profile, selection: $tabBarSelection)
             }
             .ignoresSafeArea()
         }
-    }
-}
-
-struct TabBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabBarView()
     }
 }

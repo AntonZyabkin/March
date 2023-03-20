@@ -24,14 +24,9 @@ struct AuthCoordinator: View {
     }
 }
 class AuthCoordinatorViewModel: ObservableObject {
-    enum Screen {
-        case registration(RegistrationViewModel)
-        case login(LoginViewModel)
-    }
-    
+    @Published var routes: Routes<Screen> = []
     let showHome: () -> Void
     let keyChainService: KeychainService
-    @Published var routes: Routes<Screen> = []
     
     init(decoder: DecoderService, showHome: @escaping () -> Void) {
         print("AuthCoordinatorViewModel init")
@@ -46,7 +41,7 @@ class AuthCoordinatorViewModel: ObservableObject {
     
     func showHomeView() {
         showHome()
-//        completeFlow()
+        completeFlow()
     }
     private func completeFlow() {
         Task { @MainActor in
@@ -54,5 +49,9 @@ class AuthCoordinatorViewModel: ObservableObject {
                 $0.goBackToRoot()
             }
         }
+    }
+    enum Screen {
+        case registration(RegistrationViewModel)
+        case login(LoginViewModel)
     }
 }

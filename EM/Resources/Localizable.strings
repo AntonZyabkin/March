@@ -18,11 +18,15 @@
 "reg.last" = "Last name";
 "reg.email" = "Email";
 "reg.haveAccount" = "Already have an account?";
-
+"reg.enterFirstName" = "Enter first name";
+"reg.enterLastName" = "Enter last name";
+"reg.invalidEmail" = "Invalid email";
+"reg.alreadyBusy" = "User name \"First name\" is already busy";
 // MARK: Login
 "login.title" = "Welcome back";
 "login.first" = "First name";
 "login.password" = "Password";
+"login.wrongMessage"= "Wrong login or password";
 
 
 // MARK: Home

@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var searchText: String = ""
-    var viewModel: (any HomeViewModelProtocol)?
+    var viewModel: HomeViewModel
     var homeModel = HomeModel(
         homeCategories:
             [
@@ -189,7 +189,7 @@ struct HomeView: View {
 }
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: HomeViewModel(shopApiService: ShopAPIService(networkService: NetworkService(decoderService: DecoderService()))))
     }
 }
 

@@ -6,58 +6,65 @@
 //
 
 import Foundation
-import Security
-import SwiftKeychainWrapper
+import KeychainSwift
 
 protocol KeychainServicable {
-    func save(_ value: String, for key: KeychainWrapper.Keys) -> Bool
-    func fetch(for key: KeychainWrapper.Keys) -> String?
-    func deleteItem(for key: KeychainWrapper.Keys) -> Bool
-    func deleteAll() -> Bool
+    func deleteItem(for key: String) -> Bool
+    func save(_ value: String, for key: String) -> Bool
+    func save(_ value: User) -> Bool
+    func fetch(for key: String) -> String?
+    func fetchUser(for key: String) -> User?
 }
 
 final class KeychainService{
-    
     let decoder: DecoderServicable
-    
+    let keyChain = KeychainSwift()
     init(decoder: DecoderServicable) {
         self.decoder = decoder
-    }
-    enum KeychainError: Error {
-        case itemNotFound
-        case duplicateItem
-        case invalidItemFormat
-        case unexpectedStatus(OSStatus)
-        case innNotFound
     }
 }
 
 extension KeychainService: KeychainServicable {
-    func save(_ value: String, for key: KeychainWrapper.Keys) -> Bool {
-        KeychainWrapper.standard.set(value, forKey: key.rawValue)
+    
+    func deleteItem(for key: String) -> Bool {
+        keyChain.delete(key)
     }
     
-    func fetch(for key: KeychainWrapper.Keys) throws -> String  {
-        guard let result = KeychainWrapper.standard.string(forKey: key.rawValue) else {
-            throw KeychainError.innNotFound
+    func save(_ value: String, for key: String) -> Bool {
+        keyChain.set(value, forKey: key)
+    }
+    
+    func save(_ value: User) -> Bool {
+        do {
+            let data = try decoder.encode(value)
+            return keyChain.set(data, forKey: value.firstName)
+        } catch {
+            print("error decoder.encode")
+            return false
         }
-        return result
-    }
-        
-    func fetch(for key: KeychainWrapper.Keys) -> String? {
-        KeychainWrapper.standard.string(forKey: key.rawValue)
     }
     
-    func deleteItem(for key: KeychainWrapper.Keys) -> Bool {
-        KeychainWrapper.standard.removeObject(forKey: key.rawValue)
+    func fetch(for key: String) -> String? {
+        keyChain.get(key)
     }
     
-    func deleteAll() -> Bool {
-        KeychainWrapper.standard.removeAllKeys()
+    func fetchUser(for key: String) -> User? {
+        guard let data = keyChain.getData(key) else {
+            return nil
+        }
+        do {
+            let user: User = try decoder.decode(data)
+            return user
+        } catch {
+            print("error decoder.decode")
+            return nil
+        }
     }
 }
 
-extension KeychainWrapper {
+
+//TODO: удали ключи, если не нужны
+extension KeychainSwift {
     enum Keys: String {
         case login = "login"
     }

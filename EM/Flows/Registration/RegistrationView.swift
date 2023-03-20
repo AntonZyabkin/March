@@ -9,10 +9,6 @@ import SwiftUI
 
 struct RegistrationView: View {
     
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    
     @ObservedObject var viewModel: RegistrationViewModel
     
     var body: some View {
@@ -42,13 +38,23 @@ struct RegistrationView: View {
                         .font(.montserrat(.bold, size: 30))
                         .padding(.bottom, 75)
                         .padding(.top, 120)
-                    VStack(alignment: .center, spacing: 35) {
+                    VStack(alignment: .center, spacing: 10) {
                         Group {
-                            TextField(L10n.Reg.first, text: $firstName)
-                            TextField(L10n.Reg.last, text: $lastName)
-                            TextField(L10n.Reg.email, text: $email)
+                            TextField(L10n.Reg.first, text: $viewModel.firstName)
+                                .textFieldModifier()
+                            AttentionText(message: L10n.Reg.enterFirstName, isVisible: !viewModel.isValidFirstName)
+                            
+                            TextField(L10n.Reg.last, text: $viewModel.lastName)
+                                .textFieldModifier()
+                            AttentionText(message: L10n.Reg.enterLastName, isVisible: !viewModel.isValidLastName)
+                            
+                            TextField(L10n.Reg.email, text: $viewModel.email)
+                                .textFieldModifier()
+                            ZStack{
+                                AttentionText(message: L10n.Reg.invalidEmail, isVisible: !viewModel.isValidEmailFunc())
+                                AttentionText(message: L10n.Reg.alreadyBusy, isVisible: viewModel.isEmailInBase)
+                            }
                         }
-                        .textFieldModifier()
                     }
                     Button {
                         viewModel.signInButtonDidPress()
@@ -56,8 +62,9 @@ struct RegistrationView: View {
                         Text(L10n.Button.signIn)
                             .blueButtonModifier()
                     }
-                    .padding(.top, 30)
                     .padding(.bottom, 8)
+                    .opacity(viewModel.isValidFields() ? 1 : 0.5)
+                    .disabled(!viewModel.isValidFields())
                     
                     HStack() {
                         Text(L10n.Reg.haveAccount)
@@ -71,7 +78,7 @@ struct RegistrationView: View {
                                 .foregroundColor(.buttonForegrounds)
                         }
                     }
-                    .padding(.bottom, 70)
+                    .padding(.bottom, 75)
                     .frame(
                         maxWidth: .infinity,
                         alignment: .topLeading
@@ -79,25 +86,25 @@ struct RegistrationView: View {
                 }
                 .padding(.horizontal, 48)
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .trailing) {
                     Button {
                         //
                     } label: {
                         singInButtons(Asset.google, title: L10n.Button.signInGoogle)
-                            .frame(height: 30)
+                            .frame(height: 28)
                             .frame(maxWidth: .infinity)
 
                     }
-                    .padding(.bottom, 28)
+                    .padding(.bottom, 30)
                     Button {
                         //
                     } label: {
                         singInButtons(Asset.apple, title: L10n.Button.signInApple)
-                            .frame(height: 30)
+                            .frame(height: 28)
                             .frame(maxWidth: .infinity)
                     }
                 }
-                .padding(.trailing, 10)
+                .padding(.leading, 110)
             }
         }
     }
@@ -108,7 +115,8 @@ struct RegistrationView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Text(title)
-                .font(.montserrat(.regular, size: 15))
+                .font(.montserrat(.regular, size: 14))
+            Spacer()
         }
         .foregroundColor(.black)
     }

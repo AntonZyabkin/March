@@ -23,7 +23,7 @@ struct TextFieldModifier: ViewModifier {
             .frame(height: 35)
             .frame(maxWidth: .infinity)
             .background(Color.textFieldBackground)
-            .font(.montserrat(.bold, size: 12))
+            .font(.montserrat(.regular, size: 12))
             .cornerRadius(.infinity)
             .multilineTextAlignment(.center)
     }

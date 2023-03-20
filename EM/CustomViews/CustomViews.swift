@@ -269,3 +269,15 @@ struct HeaderItems: View {
         
     }
 }
+
+struct AttentionText: View {
+    let message: String
+    let isVisible: Bool
+    
+    var body: some View {
+        Text(message)
+            .opacity(isVisible ? 1 : 0)
+            .font(.montserrat(.light, size: 12))
+            .foregroundColor(.red).opacity(0.8)
+    }
+}

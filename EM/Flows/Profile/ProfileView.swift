@@ -15,16 +15,8 @@ struct ProfileView: View {
     @State private var shouldPresentActionScheet = false
     @State private var shouldPresentCamera = false
     
-    private let profileElements = [
-        ProfileElement(icon: Asset.Profile.folder, title: L10n.Profile.tradeStore, isEditable: true),
-        ProfileElement(icon: Asset.Profile.folder, title: L10n.Profile.paymentMethod, isEditable: true),
-        ProfileElement(icon: Asset.Profile.folder, title: L10n.Profile.balance, aditionalInfo: "1593", isEditable: false),
-        ProfileElement(icon: Asset.Profile.folder, title: L10n.Profile.tradeHistory, isEditable: true),
-        ProfileElement(icon: Asset.Profile.refrash, title: L10n.Profile.restorePurchase, isEditable: true),
-        ProfileElement(icon: Asset.Profile.help, title: L10n.Profile.help, isEditable: false),
-        ProfileElement(icon: Asset.Profile.logOut, title: L10n.Profile.logOut, isEditable: false)
-    ]
-    
+    @ObservedObject var viewModel: ProfileViewModel
+
     var body: some View {
         ZStack(alignment: .top) {
             Color.pageBackground
@@ -40,7 +32,6 @@ struct ProfileView: View {
 //                            }
 //                        }
             VStack {
-                //MARK: - main views
                 VStack(alignment: .center) {
                     Text(L10n.Profile.title)
                         .font(.montserrat(.bold, size: 17))
@@ -50,7 +41,7 @@ struct ProfileView: View {
                         Circle()
                             .stroke(Color.iconInactiveForeground, lineWidth: 4)
 //                        image
-                        Image(asset: Asset.testProfileImage)
+                        image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .cornerRadius(.infinity)
@@ -77,7 +68,7 @@ struct ProfileView: View {
                         .padding(.top, 10)
                     
                     Button {
-                        //
+                        viewModel.logoutButtonDidPress()
                     } label: {
                         ZStack {
                             Image(asset: Asset.Profile.upload)
@@ -95,9 +86,13 @@ struct ProfileView: View {
                 //MARK: - List of options
                 //TODO: как лучше реализовать данный список опций?
                 VStack(alignment: .leading, spacing: 25) {
-                    ForEach(profileElements) { element in
+                    ForEach(ProfileElement.profileElements) { element in
                         Button {
-                            //
+                            switch element.type {
+                            case .logOut:
+                                viewModel.logoutButtonDidPress()
+                            default: break
+                            }
                         } label: {
                             OptionView(data: element)
                         }
@@ -108,8 +103,6 @@ struct ProfileView: View {
                 .padding(.top, 5)
                 .padding(.leading, 36)
                 .padding(.trailing, 50)
-                
-                
             }
         }
         .ignoresSafeArea()
@@ -118,7 +111,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(viewModel: ProfileViewModel(logOut: {}))
     }
 }
 
@@ -145,23 +138,3 @@ struct OptionView: View {
     }
 }
 
-struct ProfileElement: Identifiable {
-    let id = UUID()
-    let icon: ImageAsset
-    let title: String
-    let additionalInfo: String?
-    let isEditable: Bool
-    
-    init(icon: ImageAsset, title: String, aditionalInfo: String?, isEditable: Bool) {
-        self.icon = icon
-        self.title = title
-        self.additionalInfo = aditionalInfo
-        self.isEditable = isEditable
-    }
-    init(icon: ImageAsset, title: String, isEditable: Bool) {
-        self.icon = icon
-        self.title = title
-        self.additionalInfo = nil
-        self.isEditable = isEditable
-    }
-}

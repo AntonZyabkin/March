@@ -17,7 +17,6 @@ protocol HomeViewModelProtocol: ObservableObject {
 
 final class HomeViewModel: ObservableObject {
     private let shopApiService: ShopAPIServicable
-    private let coordinator: AppCoordinator
     
     @State var searchTextFielt: String = ""
     @Published var image = Image(systemName: "bell")
@@ -33,9 +32,8 @@ final class HomeViewModel: ObservableObject {
             ], latestItems: [], flashSaleItems: [], brandsItems: []
     )
     
-    init(shopApiService: ShopAPIServicable, coordinator: AppCoordinator) {
+    init(shopApiService: ShopAPIServicable) {
         self.shopApiService = shopApiService
-        self.coordinator = coordinator
     }
     
     

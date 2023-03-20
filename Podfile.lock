@@ -1,30 +1,30 @@
 PODS:
   - Alamofire (5.6.2)
+  - KeychainSwift (20.0.0)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - SwiftGen (6.6.2)
-  - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
+  - KeychainSwift
   - Moya
   - SwiftGen
-  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - KeychainSwift
     - Moya
     - SwiftGen
-    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
-  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 47dcf669d7c7bf51d6f324e36e473f7811df546b
+PODFILE CHECKSUM: 694fb5cb0cfae9c06292a65bd3b18de1cc484024
 
 COCOAPODS: 1.11.3

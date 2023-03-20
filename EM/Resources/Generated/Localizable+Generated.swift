@@ -60,6 +60,8 @@ internal enum L10n {
     internal static let password = L10n.tr("Localizable", "login.password", fallback: "Password")
     /// Welcome back
     internal static let title = L10n.tr("Localizable", "login.title", fallback: "Welcome back")
+    /// Wrong login or password
+    internal static let wrongMessage = L10n.tr("Localizable", "login.wrongMessage", fallback: "Wrong login or password")
   }
   internal enum Profile {
     /// Balance
@@ -84,12 +86,20 @@ internal enum L10n {
     internal static let uploadItemButton = L10n.tr("Localizable", "profile.uploadItemButton", fallback: "Upload item")
   }
   internal enum Reg {
+    /// User name "First name" is already busy
+    internal static let alreadyBusy = L10n.tr("Localizable", "reg.alreadyBusy", fallback: "User name \"First name\" is already busy")
     /// Email
     internal static let email = L10n.tr("Localizable", "reg.email", fallback: "Email")
+    /// Enter first name
+    internal static let enterFirstName = L10n.tr("Localizable", "reg.enterFirstName", fallback: "Enter first name")
+    /// Enter last name
+    internal static let enterLastName = L10n.tr("Localizable", "reg.enterLastName", fallback: "Enter last name")
     /// First name
     internal static let first = L10n.tr("Localizable", "reg.first", fallback: "First name")
     /// Already have an account?
     internal static let haveAccount = L10n.tr("Localizable", "reg.haveAccount", fallback: "Already have an account?")
+    /// Invalid email
+    internal static let invalidEmail = L10n.tr("Localizable", "reg.invalidEmail", fallback: "Invalid email")
     /// Last name
     internal static let last = L10n.tr("Localizable", "reg.last", fallback: "Last name")
     /// Sign in

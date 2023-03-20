@@ -6,14 +6,20 @@
 //
 
 import Foundation
-protocol TabBarViewModelProtocol {
-}
-
-final class TabBarViewModel {
+final class TabBarViewModel: ObservableObject {
     
+    let showAuthCoordinarot: () -> Void
     
-}
+    let decoderService: DecoderService
+    let networkService: NetworkService
+    let keyChainService: KeychainService
+    let shopApiService: ShopAPIService
 
-
-extension TabBarViewModel: TabBarViewModelProtocol {
+    init(showAuthCoordinarot: @escaping () -> Void, decoderService: DecoderService, networkService: NetworkService, keyChainService: KeychainService, shopApiService: ShopAPIService) {
+        self.showAuthCoordinarot = showAuthCoordinarot
+        self.decoderService = decoderService
+        self.networkService = networkService
+        self.keyChainService = keyChainService
+        self.shopApiService = shopApiService
+    }
 }

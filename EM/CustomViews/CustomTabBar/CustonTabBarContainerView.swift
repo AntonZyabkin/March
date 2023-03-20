@@ -9,8 +9,9 @@ import SwiftUI
 struct CustonTabBarContainerView<Content: View>: View {
     
     @Binding var selection: TabBarItem
-    @State private var tabs: [TabBarItem] = []
-    
+//    @State private var tabs: [TabBarItem] = []
+    @State private var tabs: [TabBarItem] = [.home, .message, .basket, .favorites, .profile]
+
     let content: Content
     
     init(selection: Binding<TabBarItem>, @ViewBuilder content: () -> Content) {
@@ -28,8 +29,8 @@ struct CustonTabBarContainerView<Content: View>: View {
                 }
             }
         }
-        .onPreferenceChange(TabBarItemsPreferenceKey.self) { value in
-            self.tabs = value
-        }
+//        .onPreferenceChange(TabBarItemsPreferenceKey.self) { value in
+//            self.tabs = value
+//        }
     }
 }

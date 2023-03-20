@@ -9,25 +9,21 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State private var firstName = ""
-    @State private var password = ""
-    @State private var isHidden = true
-
     @ObservedObject var viewModel: LoginViewModel
 
     var body: some View {
         ZStack(alignment: .top) {
             Color.pageBackground
                 .ignoresSafeArea()
-//            GeometryReader { Geometry in
-//                ZStack  {
-//                    Image("2")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .edgesIgnoringSafeArea(.all)
-//                        .opacity(0.5)
-//                }
-//            }
+            GeometryReader { Geometry in
+                ZStack  {
+                    Image("2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                        .opacity(0.5)
+                }
+            }
             VStack(alignment: .center) {
                 Text(L10n.Login.title)
                     .font(.montserrat(.bold, size: 28))
@@ -35,17 +31,17 @@ struct LoginView: View {
                     .padding(.top, 120)
                 VStack(alignment: .center, spacing: 35) {
                     Group {
-                        TextField(L10n.Login.first, text: $password)
+                        TextField(L10n.Login.first, text: $viewModel.firstName)
                         ZStack(alignment: .trailing) {
-                            if isHidden {
-                                SecureField(L10n.Login.password, text: $password)
+                            if viewModel.passwordIsHidden {
+                                SecureField(L10n.Login.password, text: $viewModel.password)
                             } else {
-                                TextField(L10n.Login.password, text: $password)
+                                TextField(L10n.Login.password, text: $viewModel.password)
                             }
                             Button {
-                                isHidden.toggle()
+                                viewModel.passwordIsHidden.toggle()
                             } label: {
-                                if isHidden {
+                                if viewModel.passwordIsHidden {
                                     Image(asset: Asset.eye)
                                 } else {
                                     Image(asset: Asset.eye1)
@@ -58,28 +54,17 @@ struct LoginView: View {
                     }
                     .textFieldModifier()
                 }
-                .padding(.bottom, 100)
+                AttentionText(message: L10n.Login.wrongMessage, isVisible: !viewModel.isValidData)
+                .padding(.bottom, 78)
                 Button {
-                    viewModel.showHomeView()
+                    viewModel.loginButtonDidPress()
                 } label: {
                     Text(L10n.Button.logIn)
                         .blueButtonModifier()
                 }
             }
             .padding(.horizontal, 48)
-            
         }
-    }
-    
-    func singInButtons(_ image: ImageAsset, title: String) -> some View {
-        HStack {
-            Image(asset: image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            Text(title)
-                .font(.montserrat(.regular, size: 15))
-        }
-        .foregroundColor(.black)
     }
 }
 

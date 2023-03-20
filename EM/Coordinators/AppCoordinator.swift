@@ -29,15 +29,19 @@ struct AppCoordinator: View {
         Router($routes) { screen, _ in
             switch screen {
             case .authFlow:
-                AuthCoordinator(viewModel: AuthCoordinatorViewModel(decoder: decoderService, showHome: showHome))
+                AuthCoordinator(viewModel: AuthCoordinatorViewModel(decoder: decoderService, showHome: showHomeCoordinarot))
             case .homeFlow:
-                TabBarView()
+                TabBarCoordinator(viewModel: TabBarCoordinatorViewModel(decoderService: decoderService, networkService: networkService, keyChainService: keyChainService, showAuthCoordinarot: showAuthCoordinarot))
             }
         }
     }
     
-    func showHome() {
+    func showHomeCoordinarot() {
         routes.removeAll()
         routes = [.root(.homeFlow)]
+    }
+    func showAuthCoordinarot() {
+        routes.removeAll()
+        routes = [.root(.authFlow)]
     }
 }

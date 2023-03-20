@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct EMApp: App {
-    
-    
     var body: some Scene {
         WindowGroup {
             AppCoordinator()
