@@ -17,6 +17,8 @@ final class RegistrationViewModel: ObservableObject {
     private let keychainServise: KeychainServicable
     
     init(showLoginView: @escaping () -> Void, showHomeView: @escaping () -> Void, completeFlow: @escaping () -> Void, keychainServise: KeychainServicable) {
+        print("RegistrationViewModel init")
+
         self.showLoginView = showLoginView
         self.showHomeView = showHomeView
         self.completeFlow = completeFlow
@@ -29,7 +31,6 @@ final class RegistrationViewModel: ObservableObject {
     
     func signInButtonDidPress() {
         completeFlow()
-        showHomeView()
     }
     
     deinit {

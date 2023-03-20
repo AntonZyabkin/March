@@ -51,6 +51,7 @@
 		E8B6F34329C4D538007DF468 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F34229C4D538007DF468 /* HomeModel.swift */; };
 		E8E2C85129C66F0B00284D9F /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = E8E2C85029C66F0B00284D9F /* FlowStacks */; };
 		E8E2C85929C7813500284D9F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C85829C7813500284D9F /* AuthCoordinator.swift */; };
+		E8E2C85D29C7C64B00284D9F /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C85C29C7C64B00284D9F /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		E8B6F32229C33529007DF468 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		E8B6F34229C4D538007DF468 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E8E2C85829C7813500284D9F /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		E8E2C85C29C7C64B00284D9F /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		F1E271BA2916CB2D5B54D6E3 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +207,7 @@
 			children = (
 				E8B6F29929BF1AFC007DF468 /* AppCoordinator.swift */,
 				E8E2C85829C7813500284D9F /* AuthCoordinator.swift */,
+				E8E2C85C29C7C64B00284D9F /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				E8B6F29129BF09D7007DF468 /* ShowAPIService.swift in Sources */,
 				E8B6F28829BEFD9F007DF468 /* DecoderService.swift in Sources */,
 				E8B6F2B929BF54E8007DF468 /* Assets+Generated.swift in Sources */,
+				E8E2C85D29C7C64B00284D9F /* TabBarCoordinator.swift in Sources */,
 				E8B6F32329C33529007DF468 /* MessageView.swift in Sources */,
 				E8B6F31529C3236B007DF468 /* CustonTabBarView.swift in Sources */,
 				E8B6F30029C1ED8B007DF468 /* PhotoPicker.swift in Sources */,
@@ -550,6 +554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -610,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

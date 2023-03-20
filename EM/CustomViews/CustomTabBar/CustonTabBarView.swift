@@ -17,17 +17,6 @@ struct CustonTabBarView: View {
     }
 }
 
-struct CustonTabBarView_Previews: PreviewProvider {
-    static let tabs: [TabBarItem] = [.home, .favorites, .basket, .message, .profile]
-    static var previews: some View {
-        VStack {
-            Spacer()
-            CustonTabBarView(tabs: tabs, selection: .constant(tabs.first!))
-        }
-        .background(Color.green)
-        .ignoresSafeArea()
-    }
-}
 
 extension CustonTabBarView {
     private func tabView(tab: TabBarItem) -> some View {

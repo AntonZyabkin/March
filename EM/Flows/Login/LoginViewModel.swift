@@ -15,6 +15,8 @@ final class LoginViewModel: ObservableObject {
     private let keychainServise: KeychainServicable
     
     init(showHomeView: @escaping () -> Void, completeFlow: @escaping () -> Void, keychainServise: KeychainServicable) {
+        print("LoginViewModel init")
+
         self.showHomeView = showHomeView
         self.completeFlow = completeFlow
         self.keychainServise = keychainServise

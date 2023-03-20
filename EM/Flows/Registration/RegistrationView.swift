@@ -51,7 +51,7 @@ struct RegistrationView: View {
                         .textFieldModifier()
                     }
                     Button {
-                        //
+                        viewModel.signInButtonDidPress()
                     } label: {
                         Text(L10n.Button.signIn)
                             .blueButtonModifier()

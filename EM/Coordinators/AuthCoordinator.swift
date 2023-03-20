@@ -34,6 +34,7 @@ class AuthCoordinatorViewModel: ObservableObject {
     @Published var routes: Routes<Screen> = []
     
     init(decoder: DecoderService, showHome: @escaping () -> Void) {
+        print("AuthCoordinatorViewModel init")
         self.keyChainService = KeychainService(decoder: decoder)
         self.showHome = showHome
         self.routes = [.root(.registration(RegistrationViewModel(showLoginView: showLoginView, showHomeView: showHomeView, completeFlow: completeFlow, keychainServise: keyChainService)))]
@@ -44,21 +45,14 @@ class AuthCoordinatorViewModel: ObservableObject {
     }
     
     func showHomeView() {
-        completeFlow()
-    }
-    func completeFlow() {
-        RouteSteps.withDelaysIfUnsupported(self, \.routes) {
-            $0.goBackToRoot()
-        }
         showHome()
+//        completeFlow()
     }
-    
-    //    private func completeFlow() {
-    //        Task { @MainActor in
-    //            await $routes.withDelaysIfUnsupported {
-    //                $0.goBackToRoot()
-    //            }
-    //            showHome()
-    //        }
-    //    }
+    private func completeFlow() {
+        Task { @MainActor in
+            await RouteSteps.withDelaysIfUnsupported(self, \.routes) {
+                $0.goBackToRoot()
+            }
+        }
+    }
 }

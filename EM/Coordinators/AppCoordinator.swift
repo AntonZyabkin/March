@@ -37,6 +37,7 @@ struct AppCoordinator: View {
     }
     
     func showHome() {
-        routes.presentCover(.homeFlow)
+        routes.removeAll()
+        routes = [.root(.homeFlow)]
     }
 }
