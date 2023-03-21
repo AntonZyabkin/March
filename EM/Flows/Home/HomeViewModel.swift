@@ -5,37 +5,22 @@
 //  Created by Anton Zyabkin on 13.03.2023.
 //
 
-import Foundation
+import Combine
 import SwiftUI
 
-protocol HomeViewModelProtocol: ObservableObject {
-    func getlatest()
-    var image: Image { get set }
-    var homeModel: HomeModel { get set }
-    var searchTextFielt: String { get set }
-}
 
+//TODO: что такое
+@MainActor
 final class HomeViewModel: ObservableObject {
     private let shopApiService: ShopAPIServicable
     
-    @State var searchTextFielt: String = ""
-    @Published var image = Image(systemName: "bell")
-    @Published var homeModel = HomeModel(
-        homeCategories:
-            [
-                HomeCategory(imageAsset: Asset.Home.phone, categoruName: L10n.Home.phones),
-                HomeCategory(imageAsset: Asset.Home.earpods, categoruName: L10n.Home.headphones),
-                HomeCategory(imageAsset: Asset.Home.gamePad, categoruName: L10n.Home.games),
-                HomeCategory(imageAsset: Asset.Home.car, categoruName: L10n.Home.cars),
-                HomeCategory(imageAsset: Asset.Home.bad, categoruName: L10n.Home.furniture),
-                HomeCategory(imageAsset: Asset.Home.robot, categoruName: L10n.Home.kids),
-            ], latestItems: [], flashSaleItems: [], brandsItems: []
-    )
-    
+    @Published var searchTextFielt: String = ""
+    @Published var homeModel = HomeModel.skelet
+    private var disposeBag = Set<AnyCancellable>()
     init(shopApiService: ShopAPIServicable) {
         self.shopApiService = shopApiService
+        searchWords()
     }
-    
     
     private func showError(_ error: Error) async {
         await MainActor.run {
@@ -45,49 +30,85 @@ final class HomeViewModel: ObservableObject {
 }
 
 
-extension HomeViewModel: HomeViewModelProtocol {
-    func fetchPhoto() {
-        guard let url = URL(string: "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"),
-              let data = try? Data(contentsOf: url),
-              let image = Image(data: data)
-        else { return }
-        self.image = image
+extension HomeViewModel {
+    func fetchPhoto(url: String) throws -> Image {
+        
+        //TODO: Synchronous URL loading of https://assets.reebok.com/images/h_2000... should not occur on this application's main thread as it may lead to UI unresponsiveness. Please switch to an asynchronous networking API such as URLSession.
+        
+        guard let url = URL(string: url) else { return Image(systemName: "bell")}
+        //        let (data, _) =  URLSession.shared.data(from: url)
+        let data = try Data(contentsOf: url)
+        return Image(data: data)!
     }
+    
     func getlatest() {
-        print("getlatest")
-        Task(priority: .utility) {
+        Task(priority: .userInitiated) {
             do {
                 let flashSale = try await shopApiService.getFlashSale()
-//                let latestViewed = try await shopApiService.getLatestViewed()
+                let latestViewed = try await shopApiService.getLatestViewed()
+                
+                let flashSaleItems = try flashSale.flashSale.map {
+                    let image = try fetchPhoto(url: $0.imageURL)
+                    return FlashSaleItem(itemImage: image, data: $0)
+                }
+                
+                let latestItems = try latestViewed.latest.map {
+                    let image = try fetchPhoto(url: $0.imageURL)
+                    return LatestItem(itemImage: image, data: $0)
+                }
                 
                 await MainActor.run {
-                    print(flashSale)
-//                    print(latestViewed)
+                    homeModel = HomeModel(latestItems: latestItems, flashSaleItems: flashSaleItems)
                 }
             } catch let error as NetworkError {
-                    await showError(error)
+                await showError(error)
             }
         }
+    }
+    
+    func searchWords() {
+        $searchTextFielt
+            .debounce(for: 1, scheduler: RunLoop.current)
+            .sink {_ in
+//                print($0)
+                Task {
+                    do {
+                        let words = try await self.shopApiService.getWords()
+                        let contains = words.words.filter { value in
+                            value.contains(self.searchTextFielt)
+                        }
+                        await MainActor.run {
+                            print(contains)
+                        }
+                    } catch let error {
+                        //TODO: как вызывать ошибку в mainActor?
+                        await self.showError(error)
+                    }
+                }
+
+            }
+            .store(in: &disposeBag)
     }
 }
 
 
+//TODO: перенеси  в экстеншены
 extension Image {
     init?(data: Data) {
-        #if canImport(UIKit)
+#if canImport(UIKit)
         if let uiImage = UIImage(data: data) {
             self.init(uiImage: uiImage)
         } else {
             return nil
         }
-        #elseif canImport(AppKit)
+#elseif canImport(AppKit)
         if let nsImage = NSImage(data: data) {
             self.init(nsImage: nsImage)
         } else {
             return nil
         }
-        #else
+#else
         return nil
-        #endif
+#endif
     }
 }

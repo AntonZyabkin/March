@@ -1,5 +1,5 @@
 //
-//  FlashSaleResponce.swift
+//  FlashSaleResponse.swift
 //  EM
 //
 //  Created by Anton Zyabkin on 13.03.2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - FlashSaleResponce
-struct FlashSaleResponce: Codable {
+struct FlashSaleResponse: Codable {
     let flashSale: [FlashSale]
 
     enum CodingKeys: String, CodingKey {

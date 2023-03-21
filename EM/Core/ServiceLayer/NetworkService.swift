@@ -48,7 +48,6 @@ extension NetworkService: Networkable {
                     }
                     switch urlResponse.statusCode {
                     case 200...599:
-                        print("Status code \(urlResponse.statusCode)")
                         do {
                             let decodeResponce: T = try self.decoderService.decode(response.data)
                             continuation.resume(returning: decodeResponce)

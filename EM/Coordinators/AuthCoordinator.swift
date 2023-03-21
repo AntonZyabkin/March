@@ -29,7 +29,6 @@ class AuthCoordinatorViewModel: ObservableObject {
     let keyChainService: KeychainService
     
     init(decoder: DecoderService, showHome: @escaping () -> Void) {
-        print("AuthCoordinatorViewModel init")
         self.keyChainService = KeychainService(decoder: decoder)
         self.showHome = showHome
         self.routes = [.root(.registration(RegistrationViewModel(showLoginView: showLoginView, showHomeView: showHomeView, completeFlow: completeFlow, keychainServise: keyChainService)))]

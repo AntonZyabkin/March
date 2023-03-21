@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - LatestViewedResponce
-struct LatestViewedResponce: Codable {
+// MARK: - LatestViewedResponse
+struct LatestViewedResponse: Codable {
     let latest: [Latest]
 }
 

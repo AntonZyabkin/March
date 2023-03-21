@@ -244,6 +244,7 @@ struct CornerRoundedImage: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: width, height: width * 1.3, alignment: .center)
+            .background(Color.gray)
             .cornerRadius(width / 12)
     }
 }
