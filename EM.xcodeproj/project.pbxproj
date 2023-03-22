@@ -53,7 +53,7 @@
 		E8E2C85929C7813500284D9F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C85829C7813500284D9F /* AuthCoordinator.swift */; };
 		E8E2C85D29C7C64B00284D9F /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C85C29C7C64B00284D9F /* TabBarCoordinator.swift */; };
 		E8E2C85F29C8791E00284D9F /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C85E29C8791E00284D9F /* RegistrationModel.swift */; };
-		E8E2C86129C8EA2000284D9F /* ProfileOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C86029C8EA2000284D9F /* ProfileOptionModel.swift */; };
+		E8E2C86129C8EA2000284D9F /* ProfileElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C86029C8EA2000284D9F /* ProfileElementModel.swift */; };
 		E8E2C86329CA102600284D9F /* WordsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C86229CA102600284D9F /* WordsResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +107,7 @@
 		E8E2C85829C7813500284D9F /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		E8E2C85C29C7C64B00284D9F /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		E8E2C85E29C8791E00284D9F /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
-		E8E2C86029C8EA2000284D9F /* ProfileOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionModel.swift; sourceTree = "<group>"; };
+		E8E2C86029C8EA2000284D9F /* ProfileElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileElementModel.swift; sourceTree = "<group>"; };
 		E8E2C86229CA102600284D9F /* WordsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsResponse.swift; sourceTree = "<group>"; };
 		FC368A08715CED33C717E743 /* Pods-EM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.release.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,7 +330,7 @@
 		E8B6F2FA29C1BB80007DF468 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				E8E2C86029C8EA2000284D9F /* ProfileOptionModel.swift */,
+				E8E2C86029C8EA2000284D9F /* ProfileElementModel.swift */,
 				E8B6F2FB29C1BBAC007DF468 /* ProfileViewModel.swift */,
 				E8B6F2FD29C1BBC6007DF468 /* ProfileView.swift */,
 				E8B6F2FF29C1ED8B007DF468 /* PhotoPicker.swift */,
@@ -517,7 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8E2C86129C8EA2000284D9F /* ProfileOptionModel.swift in Sources */,
+				E8E2C86129C8EA2000284D9F /* ProfileElementModel.swift in Sources */,
 				E8B6F29A29BF1AFC007DF468 /* AppCoordinator.swift in Sources */,
 				E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */,
 				E8B6F34329C4D538007DF468 /* HomeModel.swift in Sources */,

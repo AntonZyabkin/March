@@ -10,37 +10,24 @@ import PhotosUI
 
 struct ProfileView: View {
     
-    @State private var image: Image = Image(asset: Asset.eye)
+    @State private var image: Image = Image(asset: Asset.imageCover)
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionScheet = false
     @State private var shouldPresentCamera = false
     
     @ObservedObject var viewModel: ProfileViewModel
-
+    
     var body: some View {
         ZStack(alignment: .top) {
-            Color.pageBackground
-                .ignoresSafeArea()
-            
-//                        GeometryReader { Geometry in
-//                            ZStack  {
-//                                Image("3")
-//                                    .resizable()
-//                                    .aspectRatio(contentMode: .fill)
-//                                    .edgesIgnoringSafeArea(.all)
-//            //                        .opacity(0.8)
-//                            }
-//                        }
             VStack {
                 VStack(alignment: .center) {
                     Text(L10n.Profile.title)
                         .font(.montserrat(.bold, size: 17))
                         .foregroundColor(.black)
-                        .padding(.top, 69)
+                        .padding(.top, 19)
                     ZStack {
                         Circle()
                             .stroke(Color.iconInactiveForeground, lineWidth: 4)
-//                        image
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -62,13 +49,13 @@ struct ProfileView: View {
                             }
                     }
                     
-                    Text("MyName is Emenem")
+                    Text("Satria Adhi Pradana")
                         .font(.montserrat(.bold, size: 17))
                         .foregroundColor(.black)
                         .padding(.top, 10)
                     
                     Button {
-                        viewModel.logoutButtonDidPress()
+                        //some action
                     } label: {
                         ZStack {
                             Image(asset: Asset.Profile.upload)
@@ -83,29 +70,25 @@ struct ProfileView: View {
                 }
                 .padding(.horizontal, 48)
                 
-                //MARK: - List of options
-                //TODO: как лучше реализовать данный список опций?
-                VStack(alignment: .leading, spacing: 25) {
-                    ForEach(ProfileElement.profileElements) { element in
-                        Button {
-                            switch element.type {
-                            case .logOut:
-                                viewModel.logoutButtonDidPress()
-                            default: break
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 25) {
+                        ForEach(ProfileElement.profileElements) { element in
+                            Button {
+                                viewModel.elementAction(element.type)()
+                            } label: {
+                                OptionView(data: element)
                             }
-                        } label: {
-                            OptionView(data: element)
+                            .font(.montserrat(.regular, size: 15))
+                            .foregroundColor(.black)
                         }
-                        .font(.montserrat(.regular, size: 15))
-                        .foregroundColor(.black)
                     }
+                    .padding(.top, 5)
+                    .padding(.leading, 36)
+                    .padding(.trailing, 50)
                 }
-                .padding(.top, 5)
-                .padding(.leading, 36)
-                .padding(.trailing, 50)
-            }
+                
+            }.background(Color.pageBackground.ignoresSafeArea())
         }
-        .ignoresSafeArea()
     }
 }
 

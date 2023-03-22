@@ -9,5 +9,6 @@ target 'EM' do
   pod 'Moya'
   pod 'KeychainSwift'
   pod 'SwiftGen'
+  pod 'Kingfisher'
 
 end

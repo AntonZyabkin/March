@@ -15,23 +15,6 @@ struct RegistrationView: View {
         ZStack(alignment: .top) {
             Color.pageBackground
                 .ignoresSafeArea()
-            
-            
-            
-//            GeometryReader { Geometry in
-//                ZStack  {
-//                    Image("1")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .edgesIgnoringSafeArea(.all)
-//                        .opacity(0.3)
-//                }
-//            }
-            
-            
-            
-            
-            
             VStack {
                 VStack(alignment: .center) {
                     Text(L10n.Reg.title)

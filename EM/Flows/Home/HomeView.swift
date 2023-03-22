@@ -13,31 +13,26 @@ struct HomeView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            //            Color.red
-            //                .ignoresSafeArea()
-            //            GeometryReader { geometry in
-            //                ZStack  {
-            //                    Image("4")
-            //                        .resizable()
-            //                        .aspectRatio(contentMode: .fill)
-            //                        .edgesIgnoringSafeArea(.all)
-            //                        .opacity(0)
-            //                }
-            //            }
+//            GeometryReader { Geometry in
+//                ZStack  {
+//                    Image("4")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+//                        .edgesIgnoringSafeArea(.all)
+//                        .opacity(0.5)
+//                }
+//            }
             GeometryReader { geometry in
                 NavigationView {
                     VStack {
                         ZStack(alignment: .trailing) {
-                            TextField(L10n.Home.searchPlaceholder, text: $viewModel.searchTextFielt)
+                            TextField(L10n.Home.searchPlaceholder, text: $viewModel.searchTextField)
                                 .font(.montserrat(.light, size: 10))
                                 .multilineTextAlignment(.center)
                                 .padding(4)
                                 .background(Color.searchFieldBackground)
                                 .foregroundColor(.black)
                                 .cornerRadius(.infinity)
-//                                .onChange(of: viewModel.searchTextFielt) { _ in
-//                                    viewModel.searchWords()
-//                                }
                             Image(asset: Asset.Home.search)
                                 .resizable()
                                 .foregroundColor(Color.mainGray)
@@ -46,22 +41,23 @@ struct HomeView: View {
                                 .padding(.trailing, 10)
                         }
                         .padding(.horizontal, 70)
-                        .padding(.bottom, 15)
+                        
                         CategoryScrollView(category: viewModel.homeModel.homeCategories, mainHorizontalPadding, spacingSixItems, sixItemWidth(geometry: geometry))
                             .frame(height: sixItemWidth(geometry: geometry) * 1.38)
                             .padding(.horizontal, mainHorizontalPadding)
-                            .padding(.bottom, 23)
+                            .padding(.top, 15)
                         
                         ScrollView([.vertical], showsIndicators: true) {
                             HeaderItems(headerName: L10n.Home.latest, buttonName: L10n.Home.viewAll) {
                                 //some action
                             }
                             .padding(.horizontal, mainHorizontalPadding)
-                            .padding(.bottom, -4)
+                            .padding(.top, 23)
                             
                             LatestScrollView(latestItems: viewModel.homeModel.latestItems, spacingThreeItems, threeItemWidth(geometry: geometry), mainHorizontalPadding)
                                 .padding(.leading, mainHorizontalPadding)
                                 .frame(height: threeItemWidth(geometry: geometry) * 1.3)
+                                .padding(.top, -8)
                                 .padding(.bottom, 12)
                             
                             HeaderItems(headerName: L10n.Home.flashSale, buttonName: L10n.Home.viewAll) {
@@ -146,11 +142,38 @@ struct HomeView: View {
                     }
                 }
             }
+            .alert(isPresented: $viewModel.showingAlert) {
+                Alert(title: Text("Load data error"), message: nil, dismissButton: .default(Text("Ok")) {
+                    viewModel.showingAlert.toggle()
+                })
+            }
             .onAppear {
                 viewModel.getlatest()
             }
+            VStack {
+                ForEach(viewModel.predictedValue, id: \.self) { request in
+                    Button {
+                        viewModel.itemDidSelect(request)
+                    } label: {
+                        VStack {
+                            Text(request)
+                                .padding(.vertical, 2)
+                                .font(.montserrat(.light, size: 10))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.black)
+                                .frame(maxWidth: .infinity)
+                        }
+                    }
+
+                }
+            }
+            .background(Color.gray.opacity(0.2))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding(.horizontal, 70)
+            .padding(.top, 95)
         }
     }
+    
     func twoItemWidth(geometry: GeometryProxy) -> CGFloat {
         (geometry.size.width - 2 * mainHorizontalPadding - spacingTwoItems) / 2
     }

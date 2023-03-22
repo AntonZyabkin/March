@@ -13,9 +13,13 @@ final class ProfileViewModel: ObservableObject {
     init(logOut: @escaping () -> Void) {
         self.logOut = logOut
     }
-    
-    func logoutButtonDidPress() {
-        logOut()
+    func elementAction(_ type: ElementType) -> () -> Void {
+        switch type {
+        case .logOut:
+            return logOut
+        default:
+            return {}
+        }
     }
 }
 

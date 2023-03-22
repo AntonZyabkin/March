@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import Kingfisher
 
 struct ImageInCircle: View {
     let image: ImageAsset
@@ -42,7 +42,6 @@ struct CategoryScrollView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            
             HStack(spacing: spacingItems) {
                 ForEach(category) { category in
                     Button {
@@ -81,13 +80,13 @@ struct LatestScrollView: View {
     
     var body: some View {
         ScrollView([.horizontal], showsIndicators: false) {
-            HStack(spacing: spacingItems) {
+            LazyHStack(spacing: spacingItems) {
                 ForEach(latestItems) { item in
                     Button {
                         //
                     } label: {
                         ZStack(alignment: .bottom) {
-                            CornerRoundedImage(width: itemWidth, image: item.itemImage)
+                            CornerRoundedImage(width: itemWidth, imageURL: item.data.imageURL)
                             VStack {
                                 HStack(alignment: .bottom) {
                                     
@@ -150,13 +149,13 @@ struct FlashSaleScrollView: View {
     }
     var body: some View {
         ScrollView([.horizontal], showsIndicators: false) {
-            HStack(spacing: spacingItems) {
+            LazyHStack(spacing: spacingItems) {
                 ForEach(flashSaleItems) { item in
                     Button {
                         //
                     } label: {
                         ZStack(alignment: .bottom) {
-                            CornerRoundedImage(width: itemWidth, image: item.itemImage)
+                            CornerRoundedImage(width: itemWidth, imageURL: item.data.imageURL)
                             VStack(alignment: .trailing) {
                                 HStack {
                                     Spacer()
@@ -224,8 +223,8 @@ struct BrandsScrollView: View {
     let mainHorizontalPadding: CGFloat
     
     init(brandItems: [BrandsItem], _ spacingItems: CGFloat, _ itemWidth: CGFloat, _ mainHorizontalPadding: CGFloat) {
-        self.latestItem = brandItems.map{
-            LatestItem(itemImage: $0.itemImage, data: Latest(category: "", name: "", price: 0, imageURL: ""))
+        self.latestItem = brandItems.map{ _ in
+            LatestItem(data: Latest(category: "", name: "", price: 0, imageURL: ""))
         }
         self.spacingItems = spacingItems
         self.itemWidth = itemWidth
@@ -237,14 +236,19 @@ struct BrandsScrollView: View {
 }
 struct CornerRoundedImage: View {
     let width: CGFloat
-    let image: Image
+    let imageURL: String
     
     var body: some View {
-        image
+        KFImage(URL(string: imageURL))
+            .placeholder{ProgressView()}
             .resizable()
+            .loadDiskFileSynchronously()
+            .cacheMemoryOnly()
+            .fade(duration: 1)
+            .forceRefresh()
             .aspectRatio(contentMode: .fill)
             .frame(width: width, height: width * 1.3, alignment: .center)
-            .background(Color.gray)
+            .background(Color.iconInactiveForeground)
             .cornerRadius(width / 12)
     }
 }

@@ -29,6 +29,8 @@ struct CustonTabBarContainerView<Content: View>: View {
                 }
             }
         }
+        .background(Color.pageBackground.ignoresSafeArea())
+
 //        .onPreferenceChange(TabBarItemsPreferenceKey.self) { value in
 //            self.tabs = value
 //        }

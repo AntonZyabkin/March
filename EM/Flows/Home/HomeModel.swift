@@ -12,11 +12,12 @@ struct HomeModel {
     
     static let skelet = HomeModel(
         latestItems:
-            [LatestItem(itemImage: Image(asset: Asset.imageCover), data: Latest(category: "", name: "", price: 0, imageURL: "")),
-             LatestItem(itemImage: Image(asset: Asset.imageCover), data: Latest(category: "", name: "", price: 0, imageURL: "")),
-             LatestItem(itemImage: Image(asset: Asset.imageCover), data: Latest(category: "", name: "", price: 0, imageURL: ""))],
-        flashSaleItems: [FlashSaleItem(itemImage: Image(asset: Asset.imageCover), data: FlashSale(category: "", name: "", price: 0, discount: 0, imageURL: "")),
-                         FlashSaleItem(itemImage: Image(asset: Asset.imageCover), data: FlashSale(category: "", name: "", price: 0, discount: 0, imageURL: ""))])
+            [LatestItem(data: Latest(category: "", name: "", price: 0, imageURL: "")),
+             LatestItem(data: Latest(category: "", name: "", price: 0, imageURL: "")),
+             LatestItem(data: Latest(category: "", name: "", price: 0, imageURL: ""))],
+        flashSaleItems:
+            [FlashSaleItem(data: FlashSale(category: "", name: "", price: 0, discount: 0, imageURL: "")),
+             FlashSaleItem(data: FlashSale(category: "", name: "", price: 0, discount: 0, imageURL: ""))])
     
     let homeCategories =
     [HomeCategory(imageAsset: Asset.Home.phone, categoruName: L10n.Home.phones),
@@ -39,9 +40,9 @@ struct HomeModel {
         self.latestItems = latestItems
         self.flashSaleItems = flashSaleItems
         self.brandsItems =
-        [BrandsItem(itemImage: Image(asset: Asset.imageCover)),
-         BrandsItem(itemImage: Image(asset: Asset.imageCover)),
-         BrandsItem(itemImage: Image(asset: Asset.imageCover))]
+        [BrandsItem(),
+         BrandsItem(),
+         BrandsItem()]
     }
 }
 
@@ -53,17 +54,14 @@ struct HomeCategory: Identifiable {
 
 struct LatestItem: Identifiable {
     let id = UUID()
-    let itemImage: Image
     let data: Latest
 }
 
 struct FlashSaleItem: Identifiable {
     let id = UUID()
-    let itemImage: Image
     let data: FlashSale
 }
 
 struct BrandsItem: Identifiable {
     let id = UUID()
-    let itemImage: Image
 }
