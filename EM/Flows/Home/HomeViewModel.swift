@@ -66,11 +66,11 @@ extension HomeViewModel {
         }
     }
     
+         //TODO: нормально ли так  использовать sinc???
     func searchWords() {
         $searchTextFielt
             .debounce(for: 1, scheduler: RunLoop.current)
             .sink {_ in
-//                print($0)
                 Task {
                     do {
                         let words = try await self.shopApiService.getWords()
@@ -87,28 +87,7 @@ extension HomeViewModel {
                 }
 
             }
+            //TODO: без сохранения не работает, почему?
             .store(in: &disposeBag)
-    }
-}
-
-
-//TODO: перенеси  в экстеншены
-extension Image {
-    init?(data: Data) {
-#if canImport(UIKit)
-        if let uiImage = UIImage(data: data) {
-            self.init(uiImage: uiImage)
-        } else {
-            return nil
-        }
-#elseif canImport(AppKit)
-        if let nsImage = NSImage(data: data) {
-            self.init(nsImage: nsImage)
-        } else {
-            return nil
-        }
-#else
-        return nil
-#endif
     }
 }

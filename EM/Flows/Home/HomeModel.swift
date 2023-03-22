@@ -12,11 +12,11 @@ struct HomeModel {
     
     static let skelet = HomeModel(
         latestItems:
-            [LatestItem(itemImage: Image(systemName: "photo"), data: Latest(category: "", name: "", price: 0, imageURL: "")),
-             LatestItem(itemImage: Image(systemName: "photo"), data: Latest(category: "", name: "", price: 0, imageURL: "")),
-             LatestItem(itemImage: Image(systemName: "photo"), data: Latest(category: "", name: "", price: 0, imageURL: ""))],
-        flashSaleItems: [FlashSaleItem(itemImage: Image(systemName: "photo"), data: FlashSale(category: "", name: "", price: 0, discount: 0, imageURL: "")),
-                         FlashSaleItem(itemImage: Image(systemName: "photo"), data: FlashSale(category: "", name: "", price: 0, discount: 0, imageURL: ""))])
+            [LatestItem(itemImage: Image(asset: Asset.imageCover), data: Latest(category: "", name: "", price: 0, imageURL: "")),
+             LatestItem(itemImage: Image(asset: Asset.imageCover), data: Latest(category: "", name: "", price: 0, imageURL: "")),
+             LatestItem(itemImage: Image(asset: Asset.imageCover), data: Latest(category: "", name: "", price: 0, imageURL: ""))],
+        flashSaleItems: [FlashSaleItem(itemImage: Image(asset: Asset.imageCover), data: FlashSale(category: "", name: "", price: 0, discount: 0, imageURL: "")),
+                         FlashSaleItem(itemImage: Image(asset: Asset.imageCover), data: FlashSale(category: "", name: "", price: 0, discount: 0, imageURL: ""))])
     
     let homeCategories =
     [HomeCategory(imageAsset: Asset.Home.phone, categoruName: L10n.Home.phones),
@@ -39,9 +39,9 @@ struct HomeModel {
         self.latestItems = latestItems
         self.flashSaleItems = flashSaleItems
         self.brandsItems =
-        [BrandsItem(itemImage: Image(systemName: "photo")),
-         BrandsItem(itemImage: Image(systemName: "photo")),
-         BrandsItem(itemImage: Image(systemName: "photo"))]
+        [BrandsItem(itemImage: Image(asset: Asset.imageCover)),
+         BrandsItem(itemImage: Image(asset: Asset.imageCover)),
+         BrandsItem(itemImage: Image(asset: Asset.imageCover))]
     }
 }
 
