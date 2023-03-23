@@ -11,6 +11,7 @@ protocol ShopAPIServicable {
     func getLatestViewed() async throws -> LatestViewedResponse
     func getFlashSale() async throws -> FlashSaleResponse
     func getWords() async throws -> WordsResponse
+    func getItemInfo() async throws -> ItemInfo
 }
 
 final class ShopAPIService{
@@ -29,7 +30,12 @@ extension ShopAPIService: ShopAPIServicable {
     func getFlashSale() async throws -> FlashSaleResponse {
         try await networkService.requestAsync(HomeEndpoints.getFlashSale)
     }
+    
     func getWords() async throws -> WordsResponse {
         try await networkService.requestAsync(HomeEndpoints.getWords)
+    }
+    
+    func getItemInfo() async throws -> ItemInfo {
+        try await networkService.requestAsync(HomeEndpoints.getItemInfo)
     }
 }

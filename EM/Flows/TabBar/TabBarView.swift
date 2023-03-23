@@ -10,21 +10,19 @@ import SwiftUI
 struct TabBarView: View {
     
     @ObservedObject var viewModel: TabBarViewModel
-
-    @State private var tabBarSelection: TabBarItem = .home
     var body: some View {
         ZStack {
-            CustonTabBarContainerView(selection: $tabBarSelection) {
-                HomeView(viewModel: HomeViewModel(shopApiService: viewModel.shopApiService))
-                    .tabBatItem(tab: .home, selection: $tabBarSelection)
+            CustonTabBarContainerView(selection: $viewModel.tabBarSelection) {
+                HomeView(viewModel: HomeViewModel(shopApiService: viewModel.shopApiService, showItemPage: viewModel.showItemPage))
+                    .tabBatItem(tab: .home, selection: $viewModel.tabBarSelection)
                 FavoritesView()
-                    .tabBatItem(tab: .favorites, selection: $tabBarSelection)
-                BasketView()
-                    .tabBatItem(tab: .basket, selection: $tabBarSelection)
+                    .tabBatItem(tab: .favorites, selection: $viewModel.tabBarSelection)
+                CartView()
+                    .tabBatItem(tab: .cart, selection: $viewModel.tabBarSelection)
                 MessageView()
-                    .tabBatItem(tab: .message, selection: $tabBarSelection)
+                    .tabBatItem(tab: .message, selection: $viewModel.tabBarSelection)
                 ProfileView(viewModel: ProfileViewModel(logOut: viewModel.showAuthCoordinarot))
-                    .tabBatItem(tab: .profile, selection: $tabBarSelection)
+                    .tabBatItem(tab: .profile, selection: $viewModel.tabBarSelection)
             }
             .ignoresSafeArea()
         }

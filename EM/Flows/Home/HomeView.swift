@@ -65,7 +65,7 @@ struct HomeView: View {
                             }
                             .padding(.horizontal, mainHorizontalPadding)
                             .padding(.bottom, -4)
-                            FlashSaleScrollView(flashSaleItems: viewModel.homeModel.flashSaleItems, spacingTwoItems, mainHorizontalPadding, twoItemWidth(geometry: geometry))
+                            FlashSaleScrollView(flashSaleItems: viewModel.homeModel.flashSaleItems, spacingTwoItems, mainHorizontalPadding, twoItemWidth(geometry: geometry), showItemPage: viewModel.showItemPage)
                                 .padding(.leading, mainHorizontalPadding)
                                 .frame(height: twoItemWidth(geometry: geometry) * 1.3)
                                 .padding(.bottom, 12)
@@ -147,9 +147,9 @@ struct HomeView: View {
                     viewModel.showingAlert.toggle()
                 })
             }
-            .onAppear {
-                viewModel.getlatest()
-            }
+//            .onAppear {
+//                viewModel.start()
+//            }
             VStack {
                 ForEach(viewModel.predictedValue, id: \.self) { request in
                     Button {
@@ -186,7 +186,7 @@ struct HomeView: View {
 }
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: HomeViewModel(shopApiService: ShopAPIService(networkService: NetworkService(decoderService: DecoderService()))))
+        HomeView(viewModel: HomeViewModel(shopApiService: ShopAPIService(networkService: NetworkService(decoderService: DecoderService())), showItemPage: {}))
     }
 }
 

@@ -7,13 +7,13 @@
 
 import SwiftUI
 enum TabBarItem: Hashable {
-    case home, favorites, basket, message, profile
+    case home, favorites, cart, message, profile
     
     var iconAsset: ImageAsset {
         switch self {
         case .home: return Asset.TabBar.homeTabBar
         case .favorites: return Asset.TabBar.favoritesTabBar
-        case .basket: return Asset.TabBar.basketTabBar
+        case .cart: return Asset.TabBar.cartTabBar
         case .message: return Asset.TabBar.messageTabBar
         case .profile: return Asset.TabBar.profileTabBar
         }

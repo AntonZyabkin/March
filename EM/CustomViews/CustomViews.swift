@@ -140,19 +140,21 @@ struct FlashSaleScrollView: View {
     let mainHorizontalPadding: CGFloat
     let itemWidth: CGFloat
     let itemPadding: CGFloat = 7
+    let showItemPage: () -> Void
     
-    init(flashSaleItems: [FlashSaleItem], _ spacingItems: CGFloat, _ mainHorizontalPadding: CGFloat, _ itemWidth: CGFloat) {
+    init(flashSaleItems: [FlashSaleItem], _ spacingItems: CGFloat, _ mainHorizontalPadding: CGFloat, _ itemWidth: CGFloat, showItemPage: @escaping () -> Void) {
         self.flashSaleItems = flashSaleItems
         self.spacingItems = spacingItems
         self.mainHorizontalPadding = mainHorizontalPadding
         self.itemWidth = itemWidth
+        self.showItemPage = showItemPage
     }
     var body: some View {
         ScrollView([.horizontal], showsIndicators: false) {
             LazyHStack(spacing: spacingItems) {
                 ForEach(flashSaleItems) { item in
                     Button {
-                        //
+                        showItemPage()
                     } label: {
                         ZStack(alignment: .bottom) {
                             CornerRoundedImage(width: itemWidth, imageURL: item.data.imageURL)

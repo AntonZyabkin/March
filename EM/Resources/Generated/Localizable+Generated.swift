@@ -53,6 +53,16 @@ internal enum L10n {
     /// View all
     internal static let viewAll = L10n.tr("Localizable", "home.viewAll", fallback: "View all")
   }
+  internal enum Item {
+    /// ADD TO CART
+    internal static let addToCard = L10n.tr("Localizable", "item.addToCard", fallback: "ADD TO CART")
+    /// Color:
+    internal static let color = L10n.tr("Localizable", "item.color", fallback: "Color:")
+    /// Quantity
+    internal static let quantity = L10n.tr("Localizable", "item.quantity", fallback: "Quantity")
+    /// reviews
+    internal static let reviews = L10n.tr("Localizable", "item.reviews", fallback: "reviews")
+  }
   internal enum Login {
     /// First name
     internal static let first = L10n.tr("Localizable", "login.first", fallback: "First name")

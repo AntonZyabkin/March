@@ -61,11 +61,3 @@ extension KeychainService: KeychainServicable {
         }
     }
 }
-
-
-//TODO: удали ключи, если не нужны
-extension KeychainSwift {
-    enum Keys: String {
-        case login = "login"
-    }
-}

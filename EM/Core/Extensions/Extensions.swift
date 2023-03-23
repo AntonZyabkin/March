@@ -73,6 +73,8 @@ extension Color {
     static let categoryBackground = Color(hex: "C4C4C4D9")
     static let saleBackground = Color(hex: "F93A3A")
     static let searchFieldBackground = Color(hex: "F5F6F7")
+    static let blueBackground = Color(hex: "181726")
+
 
     
     //MARK: - Foregrounds
@@ -82,7 +84,7 @@ extension Color {
     static let categoryForeground = Color(hex: "161826")
     static let iconActiveForeground = Color(hex: "737297")
     static let iconInactiveForeground = Color(hex: "909090")
-    static let flashSaleIcon = Color(hex: "545589")
+    static let iconForeground = Color(hex: "545589")
     static let test = Color(hex: "161826")
     static let buttonForegrounds = Color(hex: "254FE6")
 }

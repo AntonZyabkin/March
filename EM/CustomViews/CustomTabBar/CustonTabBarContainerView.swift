@@ -10,7 +10,7 @@ struct CustonTabBarContainerView<Content: View>: View {
     
     @Binding var selection: TabBarItem
 //    @State private var tabs: [TabBarItem] = []
-    @State private var tabs: [TabBarItem] = [.home, .message, .basket, .favorites, .profile]
+    @State private var tabs: [TabBarItem] = [.home, .message, .cart, .favorites, .profile]
 
     let content: Content
     

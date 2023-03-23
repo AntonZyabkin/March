@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		69B01C7F24830A327E4072AA /* Pods_EM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECA8079141189EA031E3061 /* Pods_EM.framework */; };
+		E80E36D929CC343B00B0DBB9 /* ItemPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E36D829CC343B00B0DBB9 /* ItemPageView.swift */; };
+		E80E36DB29CC344600B0DBB9 /* ItemPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E36DA29CC344600B0DBB9 /* ItemPageViewModel.swift */; };
+		E80E36DD29CC386C00B0DBB9 /* ItemInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E36DC29CC386C00B0DBB9 /* ItemInfoResponse.swift */; };
 		E89D4AC229C4DF5D00E0F69C /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4AC129C4DF5D00E0F69C /* CustomViews.swift */; };
 		E8B6F27029BEF8F5007DF468 /* EMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F26F29BEF8F5007DF468 /* EMApp.swift */; };
 		E8B6F27429BEF8F8007DF468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F27329BEF8F8007DF468 /* Assets.xcassets */; };
@@ -46,7 +49,7 @@
 		E8B6F31729C323C9007DF468 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31629C323C9007DF468 /* TabBarView.swift */; };
 		E8B6F31A29C323E0007DF468 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31929C323E0007DF468 /* TabBarViewModel.swift */; };
 		E8B6F31D29C33474007DF468 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31C29C33474007DF468 /* FavoritesView.swift */; };
-		E8B6F32029C3350E007DF468 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31F29C3350E007DF468 /* BasketView.swift */; };
+		E8B6F32029C3350E007DF468 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F31F29C3350E007DF468 /* CartView.swift */; };
 		E8B6F32329C33529007DF468 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F32229C33529007DF468 /* MessageView.swift */; };
 		E8B6F34329C4D538007DF468 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F34229C4D538007DF468 /* HomeModel.swift */; };
 		E8E2C85129C66F0B00284D9F /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = E8E2C85029C66F0B00284D9F /* FlowStacks */; };
@@ -60,6 +63,9 @@
 /* Begin PBXFileReference section */
 		19FF89C55A694E375975118C /* Pods-EM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EM.debug.xcconfig"; path = "Target Support Files/Pods-EM/Pods-EM.debug.xcconfig"; sourceTree = "<group>"; };
 		BECA8079141189EA031E3061 /* Pods_EM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80E36D829CC343B00B0DBB9 /* ItemPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPageView.swift; sourceTree = "<group>"; };
+		E80E36DA29CC344600B0DBB9 /* ItemPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPageViewModel.swift; sourceTree = "<group>"; };
+		E80E36DC29CC386C00B0DBB9 /* ItemInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoResponse.swift; sourceTree = "<group>"; };
 		E89D4AC129C4DF5D00E0F69C /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		E8B6F26C29BEF8F5007DF468 /* EM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B6F26F29BEF8F5007DF468 /* EMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMApp.swift; sourceTree = "<group>"; };
@@ -101,7 +107,7 @@
 		E8B6F31629C323C9007DF468 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		E8B6F31929C323E0007DF468 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		E8B6F31C29C33474007DF468 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
-		E8B6F31F29C3350E007DF468 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		E8B6F31F29C3350E007DF468 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		E8B6F32229C33529007DF468 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		E8B6F34229C4D538007DF468 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E8E2C85829C7813500284D9F /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -140,6 +146,15 @@
 				BECA8079141189EA031E3061 /* Pods_EM.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E80E36D729CC342700B0DBB9 /* ItemPage */ = {
+			isa = PBXGroup;
+			children = (
+				E80E36D829CC343B00B0DBB9 /* ItemPageView.swift */,
+				E80E36DA29CC344600B0DBB9 /* ItemPageViewModel.swift */,
+			);
+			path = ItemPage;
 			sourceTree = "<group>";
 		};
 		E8B6F26329BEF8F5007DF468 = {
@@ -201,9 +216,10 @@
 				E8B6F31829C323CC007DF468 /* TabBar */,
 				E8B6F29429BF11BD007DF468 /* Home */,
 				E8B6F31B29C33452007DF468 /* Favorites */,
-				E8B6F31E29C33492007DF468 /* Basket */,
+				E8B6F31E29C33492007DF468 /* Cart */,
 				E8B6F32129C3351F007DF468 /* Message */,
 				E8B6F2FA29C1BB80007DF468 /* Profile */,
+				E80E36D729CC342700B0DBB9 /* ItemPage */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -262,6 +278,7 @@
 				E8B6F28C29BEFF5D007DF468 /* LatestViewedResponse.swift */,
 				E8B6F28E29BEFF90007DF468 /* FlashSaleResponse.swift */,
 				E8E2C86229CA102600284D9F /* WordsResponse.swift */,
+				E80E36DC29CC386C00B0DBB9 /* ItemInfoResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -375,12 +392,12 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
-		E8B6F31E29C33492007DF468 /* Basket */ = {
+		E8B6F31E29C33492007DF468 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				E8B6F31F29C3350E007DF468 /* BasketView.swift */,
+				E8B6F31F29C3350E007DF468 /* CartView.swift */,
 			);
-			path = Basket;
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		E8B6F32129C3351F007DF468 /* Message */ = {
@@ -520,6 +537,8 @@
 				E8E2C86129C8EA2000284D9F /* ProfileElementModel.swift in Sources */,
 				E8B6F29A29BF1AFC007DF468 /* AppCoordinator.swift in Sources */,
 				E8B6F28629BEFD91007DF468 /* NetworkService.swift in Sources */,
+				E80E36DD29CC386C00B0DBB9 /* ItemInfoResponse.swift in Sources */,
+				E80E36DB29CC344600B0DBB9 /* ItemPageViewModel.swift in Sources */,
 				E8B6F34329C4D538007DF468 /* HomeModel.swift in Sources */,
 				E89D4AC229C4DF5D00E0F69C /* CustomViews.swift in Sources */,
 				E8E2C85F29C8791E00284D9F /* RegistrationModel.swift in Sources */,
@@ -542,7 +561,7 @@
 				E8B6F2BA29BF54E8007DF468 /* Localizable+Generated.swift in Sources */,
 				E8B6F31329C32322007DF468 /* CustonTabBarContainerView.swift in Sources */,
 				E8B6F28A29BEFDA8007DF468 /* KeychainService.swift in Sources */,
-				E8B6F32029C3350E007DF468 /* BasketView.swift in Sources */,
+				E8B6F32029C3350E007DF468 /* CartView.swift in Sources */,
 				E8B6F31A29C323E0007DF468 /* TabBarViewModel.swift in Sources */,
 				E8B6F2D629C065C9007DF468 /* LoginView.swift in Sources */,
 				E8B6F31D29C33474007DF468 /* FavoritesView.swift in Sources */,
@@ -553,6 +572,7 @@
 				E8B6F2C429BF6EAB007DF468 /* Extensions.swift in Sources */,
 				E8B6F2C229BF669A007DF468 /* Fonts+Generated.swift in Sources */,
 				E8B6F29329BF0A73007DF468 /* ShowEndpoints.swift in Sources */,
+				E80E36D929CC343B00B0DBB9 /* ItemPageView.swift in Sources */,
 				E8B6F27029BEF8F5007DF468 /* EMApp.swift in Sources */,
 				E8B6F2FE29C1BBC6007DF468 /* ProfileView.swift in Sources */,
 				E8B6F28F29BEFF90007DF468 /* FlashSaleResponse.swift in Sources */,

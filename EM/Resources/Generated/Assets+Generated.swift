@@ -28,6 +28,7 @@ internal enum Asset {
   internal static let _2 = ImageAsset(name: "2")
   internal static let _3 = ImageAsset(name: "3")
   internal static let _4 = ImageAsset(name: "4")
+  internal static let _5 = ImageAsset(name: "5")
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal enum Home {
     internal static let bad = ImageAsset(name: "Home/bad")
@@ -41,6 +42,11 @@ internal enum Asset {
     internal static let robot = ImageAsset(name: "Home/robot")
     internal static let search = ImageAsset(name: "Home/search")
   }
+  internal enum ItemPage {
+    internal static let heartItemPage = ImageAsset(name: "ItemPage/heartItemPage")
+    internal static let shareItemPage = ImageAsset(name: "ItemPage/shareItemPage")
+    internal static let starItemPage = ImageAsset(name: "ItemPage/starItemPage")
+  }
   internal enum Profile {
     internal static let arrow = ImageAsset(name: "Profile/arrow")
     internal static let folder = ImageAsset(name: "Profile/folder")
@@ -50,7 +56,7 @@ internal enum Asset {
     internal static let upload = ImageAsset(name: "Profile/upload")
   }
   internal enum TabBar {
-    internal static let basketTabBar = ImageAsset(name: "TabBar/basketTabBar")
+    internal static let cartTabBar = ImageAsset(name: "TabBar/cartTabBar")
     internal static let favoritesTabBar = ImageAsset(name: "TabBar/favoritesTabBar")
     internal static let homeTabBar = ImageAsset(name: "TabBar/homeTabBar")
     internal static let messageTabBar = ImageAsset(name: "TabBar/messageTabBar")

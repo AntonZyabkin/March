@@ -8,8 +8,6 @@
 import Combine
 import SwiftUI
 
-
-//TODO: что такое
 @MainActor
 final class HomeViewModel: ObservableObject {
     
@@ -19,10 +17,13 @@ final class HomeViewModel: ObservableObject {
     @Published var predictedValue: [String] = ["Hello, world!", "Test1", "Buubs"]
     private let shopApiService: ShopAPIServicable
     private var disposeBag = Set<AnyCancellable>()
-    
-    init(shopApiService: ShopAPIServicable) {
+    let showItemPage: () -> Void
+
+    init(shopApiService: ShopAPIServicable, showItemPage: @escaping () -> Void) {
         self.shopApiService = shopApiService
+        self.showItemPage = showItemPage
         searchWords()
+        start()
     }
 
     private func showError(_ error: Error) async {
@@ -38,7 +39,7 @@ final class HomeViewModel: ObservableObject {
     }
 
     
-    func getlatest() {
+    func start() {
         Task(priority: .userInitiated) {
             do {
                 let flashSale = try await shopApiService.getFlashSale()
