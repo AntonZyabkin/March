@@ -13,7 +13,7 @@ struct TabBarView: View {
     var body: some View {
         ZStack {
             CustonTabBarContainerView(selection: $viewModel.tabBarSelection) {
-                HomeView(viewModel: HomeViewModel(shopApiService: viewModel.shopApiService, showItemPage: viewModel.showItemPage))
+                HomeCoordinator(viewModel: HomeCoordinatorViewModel(networkService: viewModel.networkService, tabBarSelection: viewModel.tabBarSelection))
                     .tabBatItem(tab: .home, selection: $viewModel.tabBarSelection)
                 FavoritesView()
                     .tabBatItem(tab: .favorites, selection: $viewModel.tabBarSelection)

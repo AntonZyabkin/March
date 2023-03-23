@@ -31,11 +31,20 @@ class AuthCoordinatorViewModel: ObservableObject {
     init(decoder: DecoderService, showHome: @escaping () -> Void) {
         self.keyChainService = KeychainService(decoder: decoder)
         self.showHome = showHome
-        self.routes = [.root(.registration(RegistrationViewModel(showLoginView: showLoginView, showHomeView: showHomeView, completeFlow: completeFlow, keychainServise: keyChainService)))]
+        self.routes = [.root(.registration(
+            RegistrationViewModel(
+                showLoginView: showLoginView,
+                showHomeView: showHomeView,
+                completeFlow: completeFlow,
+                keychainServise: keyChainService)))]
     }
     
     func showLoginView() {
-        routes.presentCover(.login(LoginViewModel(showHomeView: showHomeView, completeFlow: completeFlow, keychainServise: keyChainService)))
+        routes.presentCover(.login(
+            LoginViewModel(
+                showHomeView: showHomeView,
+                completeFlow: completeFlow,
+                keychainServise: keyChainService)))
     }
     
     func showHomeView() {

@@ -140,9 +140,9 @@ struct FlashSaleScrollView: View {
     let mainHorizontalPadding: CGFloat
     let itemWidth: CGFloat
     let itemPadding: CGFloat = 7
-    let showItemPage: () -> Void
+    let showItemPage: (FlashSaleItem) -> Void
     
-    init(flashSaleItems: [FlashSaleItem], _ spacingItems: CGFloat, _ mainHorizontalPadding: CGFloat, _ itemWidth: CGFloat, showItemPage: @escaping () -> Void) {
+    init(flashSaleItems: [FlashSaleItem], _ spacingItems: CGFloat, _ mainHorizontalPadding: CGFloat, _ itemWidth: CGFloat, showItemPage: @escaping (FlashSaleItem) -> Void) {
         self.flashSaleItems = flashSaleItems
         self.spacingItems = spacingItems
         self.mainHorizontalPadding = mainHorizontalPadding
@@ -154,7 +154,7 @@ struct FlashSaleScrollView: View {
             LazyHStack(spacing: spacingItems) {
                 ForEach(flashSaleItems) { item in
                     Button {
-                        showItemPage()
+                        showItemPage(item)
                     } label: {
                         ZStack(alignment: .bottom) {
                             CornerRoundedImage(width: itemWidth, imageURL: item.data.imageURL)
@@ -286,5 +286,29 @@ struct AttentionText: View {
             .opacity(isVisible ? 1 : 0)
             .font(.montserrat(.light, size: 12))
             .foregroundColor(.red).opacity(0.8)
+    }
+}
+
+
+struct OptionView: View {
+    var data: ProfileElement
+    var body: some View {
+        HStack {
+            Image(asset: data.icon)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 22, height: 22, alignment: .center)
+                .padding(11)
+                .background(Color.iconBackground)
+                .cornerRadius(.infinity)
+            Text(data.title)
+            Spacer()
+            if data.isEditable {
+                Image(asset: Asset.Profile.arrow)
+            }
+            if let additionalInfo = data.additionalInfo {
+                Text("$ \(additionalInfo)")
+            }
+        }
     }
 }

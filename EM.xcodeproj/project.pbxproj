@@ -11,6 +11,7 @@
 		E80E36D929CC343B00B0DBB9 /* ItemPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E36D829CC343B00B0DBB9 /* ItemPageView.swift */; };
 		E80E36DB29CC344600B0DBB9 /* ItemPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E36DA29CC344600B0DBB9 /* ItemPageViewModel.swift */; };
 		E80E36DD29CC386C00B0DBB9 /* ItemInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E36DC29CC386C00B0DBB9 /* ItemInfoResponse.swift */; };
+		E80E36E129CCAF8000B0DBB9 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E36E029CCAF8000B0DBB9 /* HomeCoordinator.swift */; };
 		E89D4AC229C4DF5D00E0F69C /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D4AC129C4DF5D00E0F69C /* CustomViews.swift */; };
 		E8B6F27029BEF8F5007DF468 /* EMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B6F26F29BEF8F5007DF468 /* EMApp.swift */; };
 		E8B6F27429BEF8F8007DF468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B6F27329BEF8F8007DF468 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		E80E36D829CC343B00B0DBB9 /* ItemPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPageView.swift; sourceTree = "<group>"; };
 		E80E36DA29CC344600B0DBB9 /* ItemPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPageViewModel.swift; sourceTree = "<group>"; };
 		E80E36DC29CC386C00B0DBB9 /* ItemInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoResponse.swift; sourceTree = "<group>"; };
+		E80E36E029CCAF8000B0DBB9 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		E89D4AC129C4DF5D00E0F69C /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		E8B6F26C29BEF8F5007DF468 /* EM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B6F26F29BEF8F5007DF468 /* EMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMApp.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				E8B6F29929BF1AFC007DF468 /* AppCoordinator.swift */,
 				E8E2C85829C7813500284D9F /* AuthCoordinator.swift */,
 				E8E2C85C29C7C64B00284D9F /* TabBarCoordinator.swift */,
+				E80E36E029CCAF8000B0DBB9 /* HomeCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				E89D4AC229C4DF5D00E0F69C /* CustomViews.swift in Sources */,
 				E8E2C85F29C8791E00284D9F /* RegistrationModel.swift in Sources */,
 				E8B6F31729C323C9007DF468 /* TabBarView.swift in Sources */,
+				E80E36E129CCAF8000B0DBB9 /* HomeCoordinator.swift in Sources */,
 				E8B6F28D29BEFF5D007DF468 /* LatestViewedResponse.swift in Sources */,
 				E8B6F29629BF1217007DF468 /* HomeViewModel.swift in Sources */,
 				E8B6F2D829C06FB7007DF468 /* ViewExtensions.swift in Sources */,

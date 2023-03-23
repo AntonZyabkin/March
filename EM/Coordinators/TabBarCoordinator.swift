@@ -36,7 +36,10 @@ class TabBarCoordinatorViewModel: ObservableObject {
     let keyChainService: KeychainService
     let shopApiService: ShopAPIService
     let showAuthCoordinarot: () -> Void
-    init(decoderService: DecoderService, networkService: NetworkService, keyChainService: KeychainService, showAuthCoordinarot: @escaping () -> Void) {
+    init(decoderService: DecoderService,
+         networkService: NetworkService,
+         keyChainService: KeychainService,
+         showAuthCoordinarot: @escaping () -> Void) {
         self.decoderService = decoderService
         self.networkService = networkService
         self.keyChainService = keyChainService
@@ -44,7 +47,6 @@ class TabBarCoordinatorViewModel: ObservableObject {
         self.shopApiService = ShopAPIService(networkService: networkService)
         self.routes = [.root(.tabBar(TabBarViewModel(
             showAuthCoordinarot: showAuthCoordinarot,
-            showItemPage: showItemPage,
             decoderService: decoderService,
             networkService: networkService,
             keyChainService: keyChainService,

@@ -13,15 +13,6 @@ struct HomeView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-//            GeometryReader { Geometry in
-//                ZStack  {
-//                    Image("4")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .edgesIgnoringSafeArea(.all)
-//                        .opacity(0.5)
-//                }
-//            }
             GeometryReader { geometry in
                 NavigationView {
                     VStack {
@@ -147,9 +138,6 @@ struct HomeView: View {
                     viewModel.showingAlert.toggle()
                 })
             }
-//            .onAppear {
-//                viewModel.start()
-//            }
             VStack {
                 ForEach(viewModel.predictedValue, id: \.self) { request in
                     Button {
@@ -170,7 +158,7 @@ struct HomeView: View {
             .background(Color.gray.opacity(0.2))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.horizontal, 70)
-            .padding(.top, 95)
+            .padding(.top, 140)
         }
     }
     
@@ -186,7 +174,7 @@ struct HomeView: View {
 }
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: HomeViewModel(shopApiService: ShopAPIService(networkService: NetworkService(decoderService: DecoderService())), showItemPage: {}))
+        HomeView(viewModel: HomeViewModel(shopApiService: ShopAPIService(networkService: NetworkService(decoderService: DecoderService())), showItemPage: {item in }))
     }
 }
 

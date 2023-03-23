@@ -69,6 +69,7 @@ struct ProfileView: View {
                     .padding(.top, 19)
                 }
                 .padding(.horizontal, 48)
+                .padding(.top, 45)
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 25) {
@@ -98,26 +99,4 @@ struct ProfileView_Previews: PreviewProvider {
     }
 }
 
-struct OptionView: View {
-    var data: ProfileElement
-    var body: some View {
-        HStack {
-            Image(asset: data.icon)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 22, height: 22, alignment: .center)
-                .padding(11)
-                .background(Color.iconBackground)
-                .cornerRadius(.infinity)
-            Text(data.title)
-            Spacer()
-            if data.isEditable {
-                Image(asset: Asset.Profile.arrow)
-            }
-            if let additionalInfo = data.additionalInfo {
-                Text("$ \(additionalInfo)")
-            }
-        }
-    }
-}
 

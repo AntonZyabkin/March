@@ -29,9 +29,17 @@ struct AppCoordinator: View {
         Router($routes) { screen, _ in
             switch screen {
             case .authFlow:
-                AuthCoordinator(viewModel: AuthCoordinatorViewModel(decoder: decoderService, showHome: showHomeCoordinarot))
+                AuthCoordinator(viewModel:
+                                    AuthCoordinatorViewModel(
+                                        decoder: decoderService,
+                                        showHome: showHomeCoordinarot))
             case .homeFlow:
-                TabBarCoordinator(viewModel: TabBarCoordinatorViewModel(decoderService: decoderService, networkService: networkService, keyChainService: keyChainService, showAuthCoordinarot: showAuthCoordinarot))
+                TabBarCoordinator(viewModel:
+                                    TabBarCoordinatorViewModel(
+                                        decoderService: decoderService,
+                                        networkService: networkService,
+                                        keyChainService: keyChainService,
+                                        showAuthCoordinarot: showAuthCoordinarot))
             }
         }
     }

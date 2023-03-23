@@ -14,12 +14,12 @@ final class HomeViewModel: ObservableObject {
     @Published var searchTextField: String = ""
     @Published var homeModel = HomeModel.skelet
     @Published var showingAlert = false
-    @Published var predictedValue: [String] = ["Hello, world!", "Test1", "Buubs"]
+    @Published var predictedValue: [String] = []
     private let shopApiService: ShopAPIServicable
     private var disposeBag = Set<AnyCancellable>()
-    let showItemPage: () -> Void
+    let showItemPage: (_ item: FlashSaleItem) -> Void
 
-    init(shopApiService: ShopAPIServicable, showItemPage: @escaping () -> Void) {
+    init(shopApiService: ShopAPIServicable, showItemPage: @escaping ( _ item: FlashSaleItem) -> Void) {
         self.shopApiService = shopApiService
         self.showItemPage = showItemPage
         searchWords()
@@ -37,7 +37,6 @@ final class HomeViewModel: ObservableObject {
         searchTextField = request
         predictedValue = []
     }
-
     
     func start() {
         Task(priority: .userInitiated) {
