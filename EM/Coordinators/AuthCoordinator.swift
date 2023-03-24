@@ -24,6 +24,11 @@ struct AuthCoordinator: View {
     }
 }
 class AuthCoordinatorViewModel: ObservableObject {
+    enum Screen {
+        case registration(RegistrationViewModel)
+        case login(LoginViewModel)
+    }
+
     @Published var routes: Routes<Screen> = []
     let showHome: () -> Void
     let keyChainService: KeychainService
@@ -57,9 +62,5 @@ class AuthCoordinatorViewModel: ObservableObject {
                 $0.goBackToRoot()
             }
         }
-    }
-    enum Screen {
-        case registration(RegistrationViewModel)
-        case login(LoginViewModel)
     }
 }

@@ -35,7 +35,7 @@ struct RegistrationView: View {
                                 .textFieldModifier()
                             ZStack{
                                 AttentionText(message: L10n.Reg.invalidEmail, isVisible: !viewModel.isValidEmailFunc())
-                                AttentionText(message: L10n.Reg.alreadyBusy, isVisible: viewModel.isEmailInBase)
+                                AttentionText(message: "User name \(viewModel.firstName) is already busy", isVisible: viewModel.isEmailInBase)
                             }
                         }
                     }

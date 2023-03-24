@@ -84,7 +84,7 @@ struct HomeView: View {
                                 //
                             } label: {
                                 VStack(alignment: .center) {
-                                    Image(asset: Asset.testProfileImage)
+                                    Image(asset: Asset.imageCover)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 35, height: 35, alignment: .center)

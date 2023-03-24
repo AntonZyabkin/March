@@ -36,6 +36,7 @@ class TabBarCoordinatorViewModel: ObservableObject {
     let keyChainService: KeychainService
     let shopApiService: ShopAPIService
     let showAuthCoordinarot: () -> Void
+    
     init(decoderService: DecoderService,
          networkService: NetworkService,
          keyChainService: KeychainService,
@@ -53,7 +54,8 @@ class TabBarCoordinatorViewModel: ObservableObject {
             shopApiService: shopApiService)), embedInNavigationView: true)]
     }
     
-    @MainActor func showItemPage() {
+    @MainActor
+    func showItemPage() {
         routes.push(.itemPage(ItemPageViewModel(shopApiService: shopApiService, goToCart: popItem)))
     }
     func popItem() {

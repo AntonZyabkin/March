@@ -226,7 +226,8 @@ struct BrandsScrollView: View {
     
     init(brandItems: [BrandsItem], _ spacingItems: CGFloat, _ itemWidth: CGFloat, _ mainHorizontalPadding: CGFloat) {
         self.latestItem = brandItems.map{ _ in
-            LatestItem(data: Latest(category: "", name: "", price: 0, imageURL: ""))
+            //тут стоит заглушка для брендов, т.к. нет данных для них
+            LatestItem(data: Latest(category: "", name: "", price: 0, imageURL: "https://garden.spoonflower.com/c/3184298/p/f/m/rNFuthUnDpGV5CaiL-fpwm3l9WPdtbWgDZJMYTBBuftI8Dlshsr5uN-Y/Solid%20Light%20Gray.jpg"))
         }
         self.spacingItems = spacingItems
         self.itemWidth = itemWidth

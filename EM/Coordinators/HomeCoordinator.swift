@@ -23,6 +23,7 @@ struct HomeCoordinator: View {
         }
     }
 }
+
 @MainActor
 class HomeCoordinatorViewModel: ObservableObject {
     
@@ -34,15 +35,21 @@ class HomeCoordinatorViewModel: ObservableObject {
     
     let shopApiService: ShopAPIService
     var tabBarSelection: TabBarItem
-
+    
     init(networkService: NetworkService, tabBarSelection: TabBarItem) {
         self.tabBarSelection = tabBarSelection
         self.shopApiService = ShopAPIService(networkService: networkService)
-        routes = [.root(.home(HomeViewModel(shopApiService: shopApiService, showItemPage: showItemPage)))]
+        routes = [.root(.home(
+            HomeViewModel(
+                shopApiService: shopApiService,
+                showItemPage: showItemPage)))]
     }
     
     func showItemPage(_ item: FlashSaleItem) {
-        routes.push(.itemPage(ItemPageViewModel(shopApiService: shopApiService, goToCart: goToCart)))
+        routes.push(.itemPage(
+            ItemPageViewModel(
+                shopApiService: shopApiService,
+                goToCart: goToCart)))
     }
     func goToCart() {
         tabBarSelection = .cart

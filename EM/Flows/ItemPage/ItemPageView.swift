@@ -56,7 +56,7 @@ struct ItemPageView: View {
                         
                     }
                     .frame(width: geometry.size.width, height: 55)
-                    .background(Color.green)
+                    .background(Color.clear)
                     .padding(.top, 27)
                     
                     VStack(alignment: .leading, spacing: 0) {
