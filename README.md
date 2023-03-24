@@ -21,8 +21,5 @@
  **Особенности задания:**
  -  UI на странице Paga1 обновляется одновременно после получения данных из 2 API, но! изображения загружаются после передачи данных на UI слой, асинхронно. Это намеренное решение, т.к. пользователь сможет уже взаимодействовать с данными, не дожидаюсь загрузки изображений. При необходимости, обновление UI можно сделать синхронно, после загрузки как данных, так и изображений.
 
-
-[![Watch the video](https://img.youtube.com/zGCkkQDoXso/default.jpg)](https://youtu.be/nTQUwghvy5Q)
-
-
-[![IMAGE ALT TEXT HERE](https://youtu.be/zGCkkQDoXso.jpg)](https://youtu.be/zGCkkQDoXso)
+Демонстрация ниже:
+https://www.youtube.com/watch?v=zGCkkQDoXso
