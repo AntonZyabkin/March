@@ -16,7 +16,8 @@ final class RegistrationViewModel: ObservableObject {
     @Published var isEmailInBase = false
     @Published var isValidFirstName = true
     @Published var isValidLastName = true
-    
+    var busyName = ""
+
     let showLoginView: () -> Void
     let showHomeView: () -> Void
     let completeFlow: () -> Void
@@ -38,7 +39,10 @@ final class RegistrationViewModel: ObservableObject {
         isEmailInBase = firstNameIsBusy()
         isValidFirstName = isValidFirstNameFunc()
         isValidLastName = isValidLastNameFunc()
-        guard !isEmailInBase else { return }
+        guard !isEmailInBase else {
+            busyName = firstName
+            return
+        }
         let user = User(firstName: firstName, lastName: lastName, email: email)
         if keychainServise.save(user) {
             showHomeView()
